@@ -1,0 +1,814 @@
+{
+  "id" : "roster-simulation_01_170506",
+  "numberOfDays" : 31,
+  "numberOfWeeks" : 5,
+  "firstDay" : "2017-05-01",
+  "maxSundays" : 4,
+  "maximumOvertime" : 1000.0,
+  "maximumUndertime" : 1000.0,
+  "shiftTypes" :
+  [
+    {
+      "id" : 1,
+      "name" : "Frueh",
+      "minimumNumberOfConsecutiveAssignments" : 1,
+      "maximumNumberOfConsecutiveAssignments" : 14,
+      "workingHours" : 8,
+      "startTime": "06:00",
+      "endTime": "14:30",
+      "requirements": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "id" : 2,
+      "name" : "Spaet",
+      "minimumNumberOfConsecutiveAssignments" : 1,
+      "maximumNumberOfConsecutiveAssignments" : 10,
+      "workingHours" : 8,
+      "startTime": "13:30",
+      "endTime": "22:00",
+      "requirements": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "forbiddenShiftTypeSuccessions" : [ {
+    "preceedingShiftType" : "Spaet",
+    "succeedingShiftType" : "Frueh"
+  } ],
+  "standardContract" : [{
+    "regularWorkingHours" : 38.5,
+    "minimumNumberOfAssignments" : 1,
+    "maximumNumberOfAssignments" : 30,
+    "minimumNumberOfConsecutiveWorkingDays" : 1,
+    "maximumNumberOfConsecutiveWorkingDays" : 30,
+    "minimumNumberOfConsecutiveDaysOff" : 1,
+    "maximumNumberOfConsecutiveDaysOff" : 1,
+    "minimumNumberOfWeekendsOff" : 2,
+    "completeWeekends" : true
+  } ],
+  "employees" : [ {
+    "ID" : 49,
+    "firstName" : "Donald",
+    "lastName" : "Duck",
+    "regularWorkingHoursPerWeek" : 38.5,
+    "minimumNumberOfConsecutiveWorkingDaysIndividual": 2,
+    "maximumNumberOfConsecutiveWorkingDaysIndividual": 7,
+   	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 100.0,
+    "offDays" : ["2017-05-01", "2017-05-02", "2017-05-03", "2017-05-08", "2017-05-09", "2017-05-10", "2017-05-11", "2017-05-12", "2017-05-13", "2017-05-14", "2017-05-15", "2017-05-16", "2017-05-17", "2017-05-18", "2017-05-19", "2017-05-20", "2017-05-21", "2017-05-22", "2017-05-23", "2017-05-24", "2017-05-25", "2017-05-26", "2017-05-27", "2017-05-28", "2017-05-29", "2017-05-30", "2017-05-31"],
+    "vacationDays" : ["2017-05-01", "2017-05-02", "2017-05-03", "2017-05-08", "2017-05-11", "2017-05-12", "2017-05-15", "2017-05-16", "2017-05-17", "2017-05-18", "2017-05-19", "2017-05-22", "2017-05-23", "2017-05-24", "2017-05-25", "2017-05-26", "2017-05-29", "2017-05-30", "2017-05-31"],
+    "individualHistory" : {
+      "lastAssignedShiftType" : "None",
+      "numberOfConsecutiveWorkingDays" : 0,
+      "cumulativeSatisfactionScore" : 0.0,
+      "cumulativeExtraHours" : 29.54
+    },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+  },
+    {
+      "ID" : 50,
+      "firstName" : "Minnie",
+      "lastName" : "Mouse",
+      "regularWorkingHoursPerWeek" : 38.5,
+      "minimumNumberOfConsecutiveWorkingDaysIndividual": 1,
+      "maximumNumberOfConsecutiveWorkingDaysIndividual": 5,
+         	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 100.0,
+      "offDays" : ["2017-05-02", "2017-05-03", "2017-05-04", "2017-05-05", "2017-05-06", "2017-05-07", "2017-05-08", "2017-05-09", "2017-05-10", "2017-05-11", "2017-05-12", "2017-05-13", "2017-05-14", "2017-05-20", "2017-05-21", "2017-05-23", "2017-05-24", "2017-05-29", "2017-05-30", "2017-05-31"],
+      "vacationDays" : ["2017-05-02", "2017-05-03", "2017-05-04", "2017-05-05", "2017-05-08", "2017-05-09", "2017-05-10", "2017-05-11", "2017-05-12", "2017-05-24", "2017-05-29"],
+      "individualHistory" : {
+        "lastAssignedShiftType" : "Frueh",
+        "numberOfConsecutiveWorkingDays" : 5,
+        "cumulativeSatisfactionScore" : 0.0,
+        "cumulativeExtraHours" : -9.45
+      },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }, {
+      "ID" : 51,
+      "firstName" : "Winnieh",
+      "lastName" : "Pooh",
+      "regularWorkingHoursPerWeek" : 38.5,
+      "minimumNumberOfConsecutiveWorkingDaysIndividual": 2,
+      "maximumNumberOfConsecutiveWorkingDaysIndividual": 7,
+         	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 100.0,
+      "offDays" : ["2017-05-01", "2017-05-02"],
+      "vacationDays" : ["2017-05-02"],
+      "individualHistory" : {
+        "lastAssignedShiftType" : "None",
+        "numberOfConsecutiveWorkingDays" : 0,
+        "cumulativeSatisfactionScore" : 0.0,
+        "cumulativeExtraHours" : -5.45
+      },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }, {
+      "ID" : 52,
+      "firstName" : "Bibi",
+      "lastName" : "Blocksberg",
+      "regularWorkingHoursPerWeek" : 28.875,
+      "minimumNumberOfConsecutiveWorkingDaysIndividual": 2,
+      "maximumNumberOfConsecutiveWorkingDaysIndividual": 5,
+         	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 100.0,
+      "offDays" : ["2017-05-04", "2017-05-05", "2017-05-10", "2017-05-11", "2017-05-18", "2017-05-19"],
+      "vacationDays" : [ ],
+      "individualHistory" : {
+        "lastAssignedShiftType" : "None",
+        "numberOfConsecutiveWorkingDays" : 0,
+        "cumulativeSatisfactionScore" : 0.0,
+        "cumulativeExtraHours" : 27.04
+      },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }, {
+      "ID" : 53,
+      "firstName" : "Benjamin",
+      "lastName" : "Bluemchen",
+      "regularWorkingHoursPerWeek" : 30.8,
+      "minimumNumberOfConsecutiveWorkingDaysIndividual": 2,
+      "maximumNumberOfConsecutiveWorkingDaysIndividual": 5,
+         	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 100.0,
+      "offDays" : ["2017-05-01", "2017-05-08"],
+      "vacationDays" : ["2017-05-08"],
+      "individualHistory" : {
+        "lastAssignedShiftType" : "None",
+        "numberOfConsecutiveWorkingDays" : 0,
+        "cumulativeSatisfactionScore" : 0.0,
+        "cumulativeExtraHours" : 16.62
+      },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }, {
+      "ID" : 54,
+      "firstName" : "Justus",
+      "lastName" : "Jonas",
+      "regularWorkingHoursPerWeek" : 38.5,
+      "minimumNumberOfConsecutiveWorkingDaysIndividual": 2,
+      "maximumNumberOfConsecutiveWorkingDaysIndividual": 7,
+         	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 100.0,
+      "offDays" : [],
+      "vacationDays" : [],
+      "individualHistory" : {
+        "lastAssignedShiftType" : "Early",
+        "numberOfConsecutiveWorkingDays" : 1,
+        "cumulativeSatisfactionScore" : 0.0,
+        "cumulativeExtraHours" : 27.16
+      },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }, {
+      "ID" : 55,
+      "firstName" : "Peter",
+      "lastName" : "Shaw",
+      "regularWorkingHoursPerWeek" : 30.8,
+      "minimumNumberOfConsecutiveWorkingDaysIndividual": 2,
+      "maximumNumberOfConsecutiveWorkingDaysIndividual": 5,
+         	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 100.0,
+      "offDays" : ["2017-05-01", "2017-05-02","2017-05-03", "2017-05-12", "2017-05-30", "2017-05-31"],
+      "vacationDays" : ["2017-05-03", "2017-05-12", "2017-05-30", "2017-05-31"],
+      "individualHistory" : {
+        "lastAssignedShiftType" : "Spaet",
+        "numberOfConsecutiveWorkingDays" : 2,
+        "cumulativeSatisfactionScore" : 0.0,
+        "cumulativeExtraHours" : -7.24
+      },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }, {
+      "ID" : 56,
+      "firstName" : "Bob",
+      "lastName" : "Andrews",
+      "regularWorkingHoursPerWeek" : 30.8,
+      "minimumNumberOfConsecutiveWorkingDaysIndividual": 2,
+      "maximumNumberOfConsecutiveWorkingDaysIndividual": 7,
+         	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 105.0,
+      "offDays" : ["2017-05-03", "2017-05-25", "2017-05-26", "2017-05-27", "2017-05-28"],
+      "vacationDays" : ["2017-05-03"],
+      "individualHistory" : {
+        "lastAssignedShiftType" : "None",
+        "numberOfConsecutiveWorkingDays" : 0,
+        "cumulativeSatisfactionScore" : 0.0,
+        "cumulativeExtraHours" : 104.24
+      },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }, {
+      "ID" : 57,
+      "firstName" : "Karla",
+      "lastName" : "Kolumna",
+      "regularWorkingHoursPerWeek" : 38.5,
+      "minimumNumberOfConsecutiveWorkingDaysIndividual": 2,
+      "maximumNumberOfConsecutiveWorkingDaysIndividual": 7,
+         	"lowerBoundExtraHours": -100.0,
+  	"upperBoundExtraHours": 100.0,
+      "offDays" : ["2017-05-20", "2017-05-21", "2017-05-22", "2017-05-23", "2017-05-24", "2017-05-25", "2017-05-26", "2017-05-27", "2017-05-28"],
+      "vacationDays" : ["2017-05-22", "2017-05-23", "2017-05-24", "2017-05-25", "2017-05-26"],
+      "individualHistory" : {
+        "lastAssignedShiftType" : "Spaet",
+        "numberOfConsecutiveWorkingDays" : 4,
+        "cumulativeSatisfactionScore" : 0.0,
+        "cumulativeExtraHours" : 6.24
+      },
+      "weekendConstraints": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }],
+  "shiftRequestJSONs" : [
+    {
+      "employeeID" : 50,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-01",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 50,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-01",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 51,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-04",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 51,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-04",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 51,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-22",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 51,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-22",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 51,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-25",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 51,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-25",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 51,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-26",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 51,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-26",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 51,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-27",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 51,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-27",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 51,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-28",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 51,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-28",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 52,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-25",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 52,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-25",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 54,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-06",
+      "preference": 5.0
+    }, 
+    {
+      "employeeID" : 54,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-07",
+      "preference": 5.0
+    }, 
+    {
+      "employeeID" : 54,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-08",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 54,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-08",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 54,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-09",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 54,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-09",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 54,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-10",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 54,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-10",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 54,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-11",
+      "preference": 5.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-13",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-13",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-25",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-25",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-26",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-26",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-27",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-27",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-28",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-28",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-29",
+      "preference": -10.0
+    }, 
+    {
+      "employeeID" : 55,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-29",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 56,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-13",
+      "preference": 5.0
+    },
+    {
+      "employeeID" : 56,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-14",
+      "preference": 5.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-01",
+      "preference": 5.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-02",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-02",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-03",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-03",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-04",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-04",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Frueh",
+      "day" : "2017-05-05",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-05",
+      "preference": -10.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-13",
+      "preference": 5.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-14",
+      "preference": 5.0
+    },
+    {
+      "employeeID" : 57,
+      "shiftType" : "Spaet",
+      "day" : "2017-05-16",
+      "preference": 5.0
+    }
+  ],
+  "fixedAssignmentJSONs" : [
+    {
+      "employee" : "49",
+      "day" : "2017-05-04",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "49",
+      "day" : "2017-05-05",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "49",
+      "day" : "2017-05-06",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "49",
+      "day" : "2017-05-07",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-15",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-16",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-17",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-18",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-19",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-22",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-25",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-26",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-27",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "50",
+      "day" : "2017-05-28",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "51",
+      "day" : "2017-05-03",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "51",
+      "day" : "2017-05-13",
+      "shiftType" : "Frueh"
+    },
+    {
+      "employee" : "51",
+      "day" : "2017-05-14",
+      "shiftType" : "Frueh"
+    },
+    {
+      "employee" : "52",
+      "day" : "2017-05-01",
+      "shiftType" : "Frueh"
+    },
+    {
+      "employee" : "52",
+      "day" : "2017-05-02",
+      "shiftType" : "Frueh"
+    },
+    {
+      "employee" : "52",
+      "day" : "2017-05-03",
+      "shiftType" : "Frueh"
+    },
+    {
+      "employee" : "53",
+      "day" : "2017-05-03",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "53",
+      "day" : "2017-05-25",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "53",
+      "day" : "2017-05-26",
+      "shiftType" : "Spaet"
+    },
+    {
+      "employee" : "53",
+      "day" : "2017-05-27",
+      "shiftType" : "Spaet"
+    }, 
+    {
+      "employee" : "53",
+      "day" : "2017-05-28",
+      "shiftType" : "Spaet"
+    }, 
+    {
+      "employee" : "53",
+      "day" : "2017-05-29",
+      "shiftType" : "Spaet"
+    }, 
+    {
+      "employee" : "54",
+      "day" : "2017-05-01",
+      "shiftType" : "Frueh"
+    }, 
+    {
+      "employee" : "54",
+      "day" : "2017-05-03",
+      "shiftType" : "Frueh"
+    }, 
+    {
+      "employee" : "54",
+      "day" : "2017-05-24",
+      "shiftType" : "Frueh"
+    }, 
+    {
+      "employee" : "54",
+      "day" : "2017-05-25",
+      "shiftType" : "Frueh"
+    }, 
+    {
+      "employee" : "54",
+      "day" : "2017-05-26",
+      "shiftType" : "Frueh"
+    }, 
+    {
+      "employee" : "54",
+      "day" : "2017-05-27",
+      "shiftType" : "Frueh"
+    }, 
+    {
+      "employee" : "54",
+      "day" : "2017-05-28",
+      "shiftType" : "Frueh"
+    }, 
+    {
+      "employee" : "54",
+      "day" : "2017-05-29",
+      "shiftType" : "Spaet"
+    }, 
+    {
+      "employee" : "56",
+      "day" : "2017-05-01",
+      "shiftType" : "Spaet"
+    }
+  ]
+}
