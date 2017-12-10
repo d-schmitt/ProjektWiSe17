@@ -1,8 +1,14 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import itertools
 import collections
 from random import randint
 from random import gauss
+
+### Rescheduling Imports
+from Test.constraints import *
+from Test.reschedulingHelpers import *
+import copy
+import random
 
 # Rosterklasse als Uebergabeobjekt zwischen Rescheduling und Simulation
 class Roster(object):
@@ -226,6 +232,120 @@ class Roster(object):
         print(empID)
         print(duration)
         """
+
+        # Input
+        #currentTime = datetime.strptime(self.start, '%Y-%m-%d')
+        illnessPeriod = duration# illnessPeriod = 5
+        illemID = empID # 52
+        #####################################################################
+
+        # Constraint Testing
+
+
+
+        #####################################################################
+        # Testing
+        RTest = copy.deepcopy(self)
+        print(getEmployeeName(getEmployeeById(self, illemID)))
+        #####################################################################
+        # Determine Start and End Date of IllnessPeriod
+        start_date = date(currentTime.year, currentTime.month, currentTime.day)
+        illnessEndDate = currentTime + timedelta(days=illnessPeriod)
+        end_date = date(illnessEndDate.year, illnessEndDate.month, illnessEndDate.day)
+
+        # Liegt Ende der Krankheit in Periode?
+        end_date_full_period = datetime.strptime(self.start,"%Y-%m-%d")+ timedelta(days=self.cntDays)
+        # wenn Krankheit über Dienstplanungsperiode hinausgeht
+        if(end_date >= end_date_full_period.date()):
+            end_date = end_date_full_period.date()
+
+        IllnessShift = []  # sammelt Tag und Schicht, für welche Ersatz gefunden werden muss
+
+        # Finde heraus, welche Schichten von Mitarbeiterausfall betroffen sind
+        for single_date in daterange(start_date, end_date):  # Für jeden Tag
+            sdDay = single_date.strftime("%Y-%m-%d")
+            print(sdDay)
+            for j in self.shiftTypes:  # Für jede Schicht
+                if (getShiftByEmployeeByDateByShift(self, sdDay, getEmployeeById(self, illemID),
+                                                    j['name']) == 1):  # Wenn Mitarbeiter dort arbeitet
+                    print("Ersatz notwendig")
+                    IllnessShift.append([sdDay, j['name']])
+                    # hier könnte man nun direkt krank melden
+
+        if(len(IllnessShift)==0):
+            print("Keine Schichten sind von Mitarbeiterausfall betroffen.")
+        else:
+            print(IllnessShift)
+        # (Wiederhole für jede ausgefallene Schicht:)
+
+        # Mitarbeiter Krank melden für alle seine Schichten --> könnte man in schichtausfall integrieren
+        for i in range(0, len(IllnessShift)):
+            changeEmployeeShift(self, IllnessShift[i][0], getEmployeeName(getEmployeeById(self, illemID)), 'sickDay')
+
+        # Erzeuge eine Liste an Nurses, welche die ausgefallene Schicht ersetzen kann
+        nurses = []
+
+        if (len(IllnessShift) > 0):  # Wenn es Schichten gibt, welche ausfallen
+            # für jede Schicht, wofür ein Ersatz gefunden werden muss
+            for i in range(0, len(IllnessShift)):
+                print(IllnessShift[i][0])
+                # überprüfe für jede Nurse
+                for j in self.employees:
+
+                    # Wenn Nurse an dem Tag noch nicht arbeitet:
+                    if (getShiftByEmployeeByDate01(self, IllnessShift[i][0], j) == 0 and getEmployeeName(
+                            j) != "Leih Nurse"
+                        and getEmployeeName(j) != getEmployeeName(getEmployeeById(self, illemID))):
+
+                        # Erzeuge Kopie des bisherigen Rosters
+                        # Rostercopy = self
+                        selfcopy = copy.deepcopy(self)
+
+                        # setze Nurse in ausgefallene Schicht der Rosterkopie ein
+                        changeEmployeeShift(selfcopy, IllnessShift[i][0], getEmployeeName(j), IllnessShift[i][1])
+
+                        # Wenn Rosterkopie-Schichtplan gültige Lösung liefert, füge zu Nurseliste hinzu
+                        if (checkShiftAssignments(selfcopy) == True and checkVacationDaysOff(selfcopy) == True
+                            and checkOffDaysOff(selfcopy)):
+                            nurses.append([IllnessShift[i], getEmployeeName(j)])
+
+        print(nurses)
+
+        IllnessShiftErsatz = []  # Liste mit Ersatz für kranke Schichten
+        shiftCount = 0
+        # für jede ermittelte krankheitsschicht:
+        for i in IllnessShift:
+            ersatz = 0  # bleibt 0, falls kein Ersatz gefunden wird für Schicht i
+
+            # Wenn nurses für schicht zur verfügung stehen:
+            if (getNoErsatzNurses(i, nurses) > 0):
+                ErsatzNurses = getErsatzNurseNames(i, nurses)
+                # für jede zum Ersatz stehende Nurse
+                for j in ErsatzNurses:
+                    # Berechne Wahrscheinlichkeit für annehmen
+                    a = random.random()
+                    print("Wahrscheinlichkeit", a, " für Annahme der Schicht von ", j)
+                    if (a > 0.5):
+                        # Assign nurse
+                        changeEmployeeShift(self, IllnessShift[shiftCount][0], j, IllnessShift[shiftCount][1])
+                        IllnessShiftErsatz.append([IllnessShift[shiftCount], j])
+                        ersatz = 1
+                        break
+
+                        # Advanced Lösung: Nehme die Nurse, wo Durchschnitt aus Satisfaction Score + Überstunden minimiert wird (über alle)
+
+            if (getNoErsatzNurses(i, nurses) == 0 or ersatz == 0):
+                # Einfache Lösung: Zeitarbeitsnurse anstellen
+                changeEmployeeShift(self, IllnessShift[shiftCount][0], 'Leih Nurse', IllnessShift[shiftCount][1])
+                IllnessShiftErsatz.append([IllnessShift[shiftCount], 'Leih Nurse'])
+                print('Leih Nurse eingetragen für', IllnessShift[shiftCount][0])
+                # Was wenn zwei Mitarbeiter in selber Schicht krank sind? --> zwei Leih Nurses
+
+                # Advanced Lösung: Restriktion ggf. aufweichen (WE z.B.)
+            shiftCount += 1
+
+        print("Gefundener Ersatz:",IllnessShiftErsatz)
+        #print(checkMinMaxConsec(self))
         
             
             
