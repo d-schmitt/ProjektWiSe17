@@ -1,6 +1,6 @@
-from readRoster import *
-from sim import *
-from roster import Roster
+from Test.readRoster import *
+from Test.sim import *
+from Test.roster import Roster
 from time import *
 import time
 

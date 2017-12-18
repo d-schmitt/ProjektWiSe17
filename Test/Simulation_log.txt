@@ -1,7 +1,7 @@
 ####################################################################################
 Simulation starten
 ####################################################################################
-2017-05-01 00:30:00: <Test.event.vacationBegin object at 0x00000273DB300E48>
+2017-05-01 00:30:00: <Test.event.vacationBegin object at 0x03504BD0>
 Donald Duck: vacation
 Minnie Mouse: none
 Winnieh Pooh: vacation
@@ -12,7 +12,7 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-01 06:00:00: <Test.event.shiftBegin object at 0x00000273DB2E0DD8>
+2017-05-01 06:00:00: <Test.event.shiftBegin object at 0x0350F4F0>
 Donald Duck: vacation
 Minnie Mouse: none
 Winnieh Pooh: vacation
@@ -23,7 +23,7 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-01 13:30:00: <Test.event.shiftBegin object at 0x00000273DB2F7080>
+2017-05-01 13:30:00: <Test.event.shiftBegin object at 0x034B17F0>
 Donald Duck: vacation
 Minnie Mouse: none
 Winnieh Pooh: vacation
@@ -34,7 +34,9 @@ Peter Shaw: vacation
 Bob Andrews: working
 Karla Kolumna: working
 Leih Nurse: none
-2017-05-01 14:30:00: <Test.event.shiftEnd object at 0x00000273DB2F7278>
+2017-05-01 14:30:00: <Test.event.shiftEnd object at 0x034B1810>
+Bibi: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
 Donald Duck: vacation
 Minnie Mouse: none
 Winnieh Pooh: vacation
@@ -45,7 +47,9 @@ Peter Shaw: vacation
 Bob Andrews: working
 Karla Kolumna: working
 Leih Nurse: none
-2017-05-01 22:00:00: <Test.event.shiftEnd object at 0x00000273DB2F70B8>
+2017-05-01 22:00:00: <Test.event.shiftEnd object at 0x034B1710>
+Bob: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
 Donald Duck: vacation
 Minnie Mouse: none
 Winnieh Pooh: vacation
@@ -56,7 +60,7 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-02 00:30:00: <Test.event.vacationBegin object at 0x00000273DB300E80>
+2017-05-02 00:30:00: <Test.event.vacationBegin object at 0x034B18D0>
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: vacation
@@ -67,7 +71,7 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-02 01:00:00: <Test.event.vacationEnd object at 0x00000273DB300048>
+2017-05-02 01:00:00: <Test.event.vacationEnd object at 0x03504BB0>
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: vacation
@@ -78,7 +82,7 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-02 06:00:00: <Test.event.shiftBegin object at 0x00000273DB307860>
+2017-05-02 06:00:00: <Test.event.shiftBegin object at 0x034B1970>
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: vacation
@@ -89,7 +93,7 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-02 13:30:00: <Test.event.shiftBegin object at 0x00000273DB307FD0>
+2017-05-02 13:30:00: <Test.event.shiftBegin object at 0x034B17B0>
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: vacation
@@ -100,7 +104,9 @@ Peter Shaw: vacation
 Bob Andrews: working
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-02 14:30:00: <Test.event.shiftEnd object at 0x00000273DB307E48>
+2017-05-02 14:30:00: <Test.event.shiftEnd object at 0x034B1690>
+Bibi: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: vacation
@@ -111,7 +117,9 @@ Peter Shaw: vacation
 Bob Andrews: working
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-02 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3210F0>
+2017-05-02 22:00:00: <Test.event.shiftEnd object at 0x034B18B0>
+Benjamin: +8 Arbeitsstunden
+Bob: +8 Arbeitsstunden
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: vacation
@@ -122,7 +130,7 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-03 00:30:00: <Test.event.vacationBegin object at 0x00000273DB307A90>
+2017-05-03 00:30:00: <Test.event.vacationBegin object at 0x034B1830>
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: vacation
@@ -133,7 +141,7 @@ Peter Shaw: vacation
 Bob Andrews: vacation
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-03 01:00:00: <Test.event.vacationEnd object at 0x00000273DB307C88>
+2017-05-03 01:00:00: <Test.event.vacationEnd object at 0x034B1790>
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: none
@@ -144,7 +152,7 @@ Peter Shaw: vacation
 Bob Andrews: vacation
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-03 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3212E8>
+2017-05-03 06:00:00: <Test.event.shiftBegin object at 0x034B18F0>
 Donald Duck: vacation
 Minnie Mouse: vacation
 Winnieh Pooh: none
@@ -155,9 +163,30 @@ Peter Shaw: vacation
 Bob Andrews: vacation
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-03 13:30:00: <Test.event.shiftBegin object at 0x00000273DB321BA8>
+2017-05-03 10:00:00: <Test.event.illnessBegin object at 0x03504B90>--Minnie
 Donald Duck: vacation
-Minnie Mouse: vacation
+Minnie Mouse: sick
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: vacation
+Bob Andrews: vacation
+Karla Kolumna: none
+Leih Nurse: none
+------------------------------Re-Scheduling----------------------------------
+Minnie Mouse
+2017-05-03
+2017-05-04
+2017-05-05
+2017-05-06
+Keine Schichten sind von Mitarbeiterausfall betroffen. 
+[]
+Gefundener Ersatz: []
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-03 13:30:00: <Test.event.shiftBegin object at 0x034B19D0>
+Donald Duck: vacation
+Minnie Mouse: sick
 Winnieh Pooh: working
 Bibi Blocksberg: working
 Benjamin Bluemchen: working
@@ -166,9 +195,11 @@ Peter Shaw: vacation
 Bob Andrews: vacation
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-03 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3218D0>
+2017-05-03 14:30:00: <Test.event.shiftEnd object at 0x034B1950>
+Bibi: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
 Donald Duck: vacation
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: working
 Bibi Blocksberg: none
 Benjamin Bluemchen: working
@@ -177,9 +208,11 @@ Peter Shaw: vacation
 Bob Andrews: vacation
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-03 22:00:00: <Test.event.shiftEnd object at 0x00000273DB321B38>
+2017-05-03 22:00:00: <Test.event.shiftEnd object at 0x034B1B30>
+Winnieh: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
 Donald Duck: vacation
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: none
 Bibi Blocksberg: none
 Benjamin Bluemchen: none
@@ -188,9 +221,9 @@ Peter Shaw: vacation
 Bob Andrews: vacation
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-04 00:30:00: <Test.event.vacationBegin object at 0x00000273DB3214A8>
+2017-05-04 00:30:00: <Test.event.vacationBegin object at 0x034B1910>
 Donald Duck: vacation
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: none
 Bibi Blocksberg: vacation
 Benjamin Bluemchen: none
@@ -199,9 +232,9 @@ Peter Shaw: vacation
 Bob Andrews: vacation
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-04 01:00:00: <Test.event.vacationEnd object at 0x00000273DB3216D8>
+2017-05-04 01:00:00: <Test.event.vacationEnd object at 0x034B1890>
 Donald Duck: none
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: none
 Bibi Blocksberg: vacation
 Benjamin Bluemchen: none
@@ -210,9 +243,9 @@ Peter Shaw: none
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-04 06:00:00: <Test.event.shiftBegin object at 0x00000273DB321DA0>
+2017-05-04 06:00:00: <Test.event.shiftBegin object at 0x034B1BD0>
 Donald Duck: none
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: none
 Bibi Blocksberg: vacation
 Benjamin Bluemchen: none
@@ -221,9 +254,9 @@ Peter Shaw: working
 Bob Andrews: none
 Karla Kolumna: working
 Leih Nurse: none
-2017-05-04 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3296A0>
+2017-05-04 13:30:00: <Test.event.shiftBegin object at 0x034B1C70>
 Donald Duck: working
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: working
 Bibi Blocksberg: vacation
 Benjamin Bluemchen: none
@@ -232,9 +265,11 @@ Peter Shaw: working
 Bob Andrews: none
 Karla Kolumna: working
 Leih Nurse: none
-2017-05-04 14:30:00: <Test.event.shiftEnd object at 0x00000273DB329400>
+2017-05-04 14:30:00: <Test.event.shiftEnd object at 0x034B1990>
+Peter: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
 Donald Duck: working
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: working
 Bibi Blocksberg: vacation
 Benjamin Bluemchen: none
@@ -243,9 +278,11 @@ Peter Shaw: none
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-04 22:00:00: <Test.event.shiftEnd object at 0x00000273DB329630>
+2017-05-04 22:00:00: <Test.event.shiftEnd object at 0x034B1BF0>
+Donald: +8 Arbeitsstunden
+Winnieh: +8 Arbeitsstunden
 Donald Duck: none
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: none
 Bibi Blocksberg: vacation
 Benjamin Bluemchen: none
@@ -254,41 +291,1637 @@ Peter Shaw: none
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-05 05:30:00: <Test.event.illnessBegin object at 0x00000273DB300E10>--Bibi
+2017-05-05 06:00:00: <Test.event.shiftBegin object at 0x034B1CD0>
 Donald Duck: none
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: none
-Bibi Blocksberg: sick
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-05 06:00:00: <Test.event.shiftBegin object at 0x00000273DB329860>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: sick
+Bibi Blocksberg: vacation
 Benjamin Bluemchen: working
 Justus Jonas: none
 Peter Shaw: working
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-05 13:30:00: <Test.event.shiftBegin object at 0x00000273DB33B7F0>
+2017-05-05 13:30:00: <Test.event.shiftBegin object at 0x034B1D10>
 Donald Duck: working
-Minnie Mouse: vacation
+Minnie Mouse: sick
 Winnieh Pooh: none
-Bibi Blocksberg: sick
+Bibi Blocksberg: vacation
 Benjamin Bluemchen: working
 Justus Jonas: none
 Peter Shaw: working
 Bob Andrews: none
 Karla Kolumna: working
 Leih Nurse: none
-2017-05-05 14:30:00: <Test.event.shiftEnd object at 0x00000273DB329E80>
+2017-05-05 14:30:00: <Test.event.illnessBegin object at 0x034B1A70>--Winnieh
 Donald Duck: working
+Minnie Mouse: sick
+Winnieh Pooh: sick
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-06-Frueh---Winnieh: +8 Krankheitsstunden
+2017-05-07-Frueh---Winnieh: +8 Krankheitsstunden
+2017-05-08-Spaet---Winnieh: +8 Krankheitsstunden
+2017-05-09-Spaet---Winnieh: +8 Krankheitsstunden
+2017-05-10-Spaet---Winnieh: +8 Krankheitsstunden
+------------------------------Re-Scheduling----------------------------------
+Winnieh Pooh
+2017-05-05
+2017-05-06
+Ersatz notwendig 
+2017-05-07
+Ersatz notwendig 
+2017-05-08
+Ersatz notwendig 
+2017-05-09
+Ersatz notwendig 
+2017-05-10
+Ersatz notwendig 
+[['2017-05-06', 'Frueh'], ['2017-05-07', 'Frueh'], ['2017-05-08', 'Spaet'], ['2017-05-09', 'Spaet'], ['2017-05-10', 'Spaet']]
+2017-05-06
+2017-05-07
+2017-05-08
+2017-05-09
+2017-05-10
+[[['2017-05-06', 'Frueh'], 'Bibi Blocksberg'], [['2017-05-06', 'Frueh'], 'Justus Jonas'], [['2017-05-06', 'Frueh'], 'Bob Andrews'], [['2017-05-06', 'Frueh'], 'Karla Kolumna'], [['2017-05-07', 'Frueh'], 'Bibi Blocksberg'], [['2017-05-07', 'Frueh'], 'Justus Jonas'], [['2017-05-07', 'Frueh'], 'Bob Andrews'], [['2017-05-07', 'Frueh'], 'Karla Kolumna'], [['2017-05-08', 'Spaet'], 'Justus Jonas'], [['2017-05-08', 'Spaet'], 'Bob Andrews'], [['2017-05-09', 'Spaet'], 'Justus Jonas'], [['2017-05-09', 'Spaet'], 'Peter Shaw'], [['2017-05-09', 'Spaet'], 'Bob Andrews'], [['2017-05-10', 'Spaet'], 'Bob Andrews'], [['2017-05-10', 'Spaet'], 'Karla Kolumna']]
+Wahrscheinlichkeit 0.6968232951990969 fuer Annahme der Schicht von Bibi Blocksberg
+Wahrscheinlichkeit 0.9379668399854764 fuer Annahme der Schicht von Bibi Blocksberg
+Wahrscheinlichkeit 0.4164993613671537 fuer Annahme der Schicht von Justus Jonas
+Wahrscheinlichkeit 0.11638213782228646 fuer Annahme der Schicht von Bob Andrews
+Leih Nurse eingetragen fuer2017-05-08
+Wahrscheinlichkeit 0.8410771316796583 fuer Annahme der Schicht von Justus Jonas
+Wahrscheinlichkeit 0.7954681952315077 fuer Annahme der Schicht von Bob Andrews
+Gefundener Ersatz: [[['2017-05-06', 'Frueh'], 'Bibi Blocksberg'], [['2017-05-07', 'Frueh'], 'Bibi Blocksberg'], [['2017-05-08', 'Spaet'], 'Leih Nurse'], [['2017-05-09', 'Spaet'], 'Justus Jonas'], [['2017-05-10', 'Spaet'], 'Bob Andrews']]
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-05 14:30:00: <Test.event.shiftEnd object at 0x034B1CB0>
+Benjamin: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: working
+Minnie Mouse: sick
+Winnieh Pooh: sick
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-05 22:00:00: <Test.event.shiftEnd object at 0x034B19F0>
+Donald: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: sick
+Winnieh Pooh: sick
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-06 01:00:00: <Test.event.vacationEnd object at 0x034B1B10>
+Donald Duck: none
+Minnie Mouse: sick
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-06 06:00:00: <Test.event.shiftBegin object at 0x034B1C30>
+Donald Duck: none
+Minnie Mouse: sick
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-06 13:30:00: <Test.event.shiftBegin object at 0x0350FF90>
+Donald Duck: working
+Minnie Mouse: sick
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-06 14:30:00: <Test.event.shiftEnd object at 0x03492B90>
+Bibi: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: working
+Minnie Mouse: sick
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-06 22:00:00: <Test.event.shiftEnd object at 0x0350FFD0>
+Donald: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: sick
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-06 23:30:00: <Test.event.illnessEnd object at 0x034B17D0>--Minnie
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-07 06:00:00: <Test.event.shiftBegin object at 0x03492390>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-07 13:30:00: <Test.event.shiftBegin object at 0x0350FFF0>
+Donald Duck: working
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-07 14:30:00: <Test.event.shiftEnd object at 0x0350FFB0>
+Bibi: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: working
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-07 15:00:00: <Test.event.illnessBegin object at 0x034923B0>--Benjamin
+Donald Duck: working
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: sick
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-09-Spaet---Benjamin: +8 Krankheitsstunden
+------------------------------Re-Scheduling----------------------------------
+Benjamin Bluemchen
+2017-05-07
+2017-05-08
+2017-05-09
+Ersatz notwendig 
+[['2017-05-09', 'Spaet']]
+2017-05-09
+[[['2017-05-09', 'Spaet'], 'Winnieh Pooh'], [['2017-05-09', 'Spaet'], 'Peter Shaw'], [['2017-05-09', 'Spaet'], 'Bob Andrews']]
+Wahrscheinlichkeit 0.8938425367355913 fuer Annahme der Schicht von Winnieh Pooh
+Gefundener Ersatz: [[['2017-05-09', 'Spaet'], 'Winnieh Pooh']]
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-07 22:00:00: <Test.event.shiftEnd object at 0x034B1770>
+Donald: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: sick
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-08 00:30:00: <Test.event.vacationBegin object at 0x034B1B50>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: vacation
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-08 06:00:00: <Test.event.shiftBegin object at 0x034B1E50>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: vacation
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-08 13:30:00: <Test.event.shiftBegin object at 0x03616250>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: vacation
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-08 14:30:00: <Test.event.shiftEnd object at 0x034E0130>
+Bibi: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: vacation
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-08 22:00:00: <Test.event.shiftEnd object at 0x03616FF0>
+Peter: +8 Arbeitsstunden
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: vacation
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-09 01:00:00: <Test.event.vacationEnd object at 0x03492030>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-09 06:00:00: <Test.event.shiftBegin object at 0x03614EB0>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-09 13:30:00: <Test.event.shiftBegin object at 0x03616270>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick --- Achtung: Dieser MA ist krank und soll diese Schicht arbeiten
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-09 14:30:00: <Test.event.shiftEnd object at 0x036140B0>
+Bibi: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-09 22:00:00: <Test.event.shiftEnd object at 0x034B1A50>
+Justus: +8 Arbeitsstunden
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-09 23:30:00: <Test.event.illnessEnd object at 0x034B1D90>--Benjamin
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-10 00:30:00: <Test.event.vacationBegin object at 0x03610270>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-10 06:00:00: <Test.event.shiftBegin object at 0x034B1DD0>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-10 13:30:00: <Test.event.shiftBegin object at 0x034B1D50>
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: working
+Bob Andrews: working
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-10 14:30:00: <Test.event.shiftEnd object at 0x034B1DF0>
+Justus: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: working
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-10 22:00:00: <Test.event.shiftEnd object at 0x034B1A10>
+Benjamin: +8 Arbeitsstunden
+Bob: +8 Arbeitsstunden
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-10 23:30:00: <Test.event.illnessEnd object at 0x034942F0>--Winnieh
+Donald Duck: vacation
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-11 00:00:00: <Test.event.illnessBegin object at 0x034927B0>--Donald
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+------------------------------Re-Scheduling----------------------------------
+Donald Duck
+2017-05-11
+2017-05-12
+2017-05-13
+2017-05-14
+Keine Schichten sind von Mitarbeiterausfall betroffen. 
+[]
+Gefundener Ersatz: []
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-11 06:00:00: <Test.event.shiftBegin object at 0x034B1D30>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-11 13:30:00: <Test.event.shiftBegin object at 0x036179F0>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-11 14:30:00: <Test.event.shiftEnd object at 0x034CB3B0>
+Justus: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-11 22:00:00: <Test.event.shiftEnd object at 0x034CB430>
+Benjamin: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-12 00:30:00: <Test.event.vacationBegin object at 0x034B1BB0>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-12 01:00:00: <Test.event.vacationEnd object at 0x03610E70>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-12 06:00:00: <Test.event.shiftBegin object at 0x034CB2D0>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-12 13:30:00: <Test.event.shiftBegin object at 0x036190B0>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-12 14:30:00: <Test.event.shiftEnd object at 0x034CB410>
+Justus: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-12 22:00:00: <Test.event.shiftEnd object at 0x036197F0>
+Bibi: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-13 01:00:00: <Test.event.vacationEnd object at 0x034CB470>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-13 06:00:00: <Test.event.shiftBegin object at 0x036191D0>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: working
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-13 13:30:00: <Test.event.shiftBegin object at 0x034CBC30>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: working
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-13 14:30:00: <Test.event.shiftEnd object at 0x034CBA30>
+Winnieh: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-13 22:00:00: <Test.event.shiftEnd object at 0x034B1B90>
+Bibi: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-14 06:00:00: <Test.event.shiftBegin object at 0x034CB810>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: working
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-14 13:30:00: <Test.event.shiftBegin object at 0x03619290>
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: working
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-14 14:30:00: <Test.event.shiftEnd object at 0x034CB4B0>
+Winnieh: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-14 16:30:00: <Test.event.illnessBegin object at 0x034CB210>--Bibi
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-14-Spaet---Bibi: +5:00:00 Krankheitsstunden
+2017-05-14-Spaet---Bibi: +3:00:00 Arbeitsstunden
+2017-05-15-Spaet---Bibi: +8 Krankheitsstunden
+------------------------------Re-Scheduling----------------------------------
+Bibi Blocksberg
+2017-05-14
+2017-05-15
+Ersatz notwendig 
+2017-05-16
+2017-05-17
+2017-05-18
+[['2017-05-15', 'Spaet']]
+2017-05-15
+[[['2017-05-15', 'Spaet'], 'Winnieh Pooh'], [['2017-05-15', 'Spaet'], 'Benjamin Bluemchen'], [['2017-05-15', 'Spaet'], 'Justus Jonas'], [['2017-05-15', 'Spaet'], 'Bob Andrews']]
+Wahrscheinlichkeit 0.752500504307233 fuer Annahme der Schicht von Winnieh Pooh
+Gefundener Ersatz: [[['2017-05-15', 'Spaet'], 'Winnieh Pooh']]
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-14 22:00:00: <Test.event.shiftEnd object at 0x03619710>
+Justus: +8 Arbeitsstunden
+Donald Duck: sick
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-14 23:30:00: <Test.event.illnessEnd object at 0x034CB4D0>--Donald
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-15 01:00:00: <Test.event.vacationEnd object at 0x03619130>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-15 06:00:00: <Test.event.shiftBegin object at 0x03619270>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-15 13:30:00: <Test.event.shiftBegin object at 0x03613910>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-15 14:30:00: <Test.event.shiftEnd object at 0x034924B0>
+Peter: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-15 22:00:00: <Test.event.shiftEnd object at 0x03613090>
+Minnie: +8 Arbeitsstunden
+Winnieh: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-16 06:00:00: <Test.event.shiftBegin object at 0x0361BAF0>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-16 13:30:00: <Test.event.shiftBegin object at 0x0361BFD0>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-16 14:30:00: <Test.event.shiftEnd object at 0x0361BB30>
+Peter: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-16 22:00:00: <Test.event.shiftEnd object at 0x0361BA90>
+Minnie: +8 Arbeitsstunden
+Winnieh: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-17 06:00:00: <Test.event.shiftBegin object at 0x0361B390>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-17 13:30:00: <Test.event.shiftBegin object at 0x0361B430>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-17 14:30:00: <Test.event.shiftEnd object at 0x0361B330>
+Benjamin: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-17 22:00:00: <Test.event.shiftEnd object at 0x0361B2D0>
+Minnie: +8 Arbeitsstunden
+Winnieh: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-17 22:30:00: <Test.event.illnessBegin object at 0x03619370>--Peter
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+------------------------------Re-Scheduling----------------------------------
+Peter Shaw
+2017-05-17
+2017-05-18
+2017-05-19
+Keine Schichten sind von Mitarbeiterausfall betroffen. 
+[]
+Gefundener Ersatz: []
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-18 00:30:00: <Test.event.vacationBegin object at 0x034CB290>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-18 06:00:00: <Test.event.shiftBegin object at 0x0361B4B0>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-18 13:30:00: <Test.event.shiftBegin object at 0x03619B90>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-18 14:30:00: <Test.event.shiftEnd object at 0x03619110>
+Benjamin: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-18 22:00:00: <Test.event.shiftEnd object at 0x03619790>
+Minnie: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: vacation
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-18 23:30:00: <Test.event.illnessEnd object at 0x036193B0>--Bibi
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-19 06:00:00: <Test.event.shiftBegin object at 0x03619310>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: working
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-19 13:30:00: <Test.event.shiftBegin object at 0x0361B650>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-19 14:30:00: <Test.event.shiftEnd object at 0x0361BEB0>
+Winnieh: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-19 22:00:00: <Test.event.shiftEnd object at 0x0361B4F0>
+Minnie: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: sick
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-19 23:30:00: <Test.event.illnessEnd object at 0x0361BA50>--Peter
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-20 00:30:00: <Test.event.vacationBegin object at 0x03619CB0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-20 01:00:00: <Test.event.vacationEnd object at 0x034920D0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-20 06:00:00: <Test.event.shiftBegin object at 0x0361BF30>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: working
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-20 13:30:00: <Test.event.shiftBegin object at 0x0361BF70>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: working
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-20 14:30:00: <Test.event.shiftEnd object at 0x0361B450>
+Bibi: +8 Arbeitsstunden
+Bob: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-20 22:00:00: <Test.event.shiftEnd object at 0x0361BF90>
+Winnieh: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-21 06:00:00: <Test.event.shiftBegin object at 0x0361B5B0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: working
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-21 13:30:00: <Test.event.shiftBegin object at 0x0361BFB0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: working
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-21 14:30:00: <Test.event.shiftEnd object at 0x0361BF10>
+Bibi: +8 Arbeitsstunden
+Bob: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-21 16:00:00: <Test.event.illnessBegin object at 0x0361B590>--Winnieh
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-21-Spaet---Winnieh: +5:30:00 Krankheitsstunden
+2017-05-21-Spaet---Winnieh: +2:30:00 Arbeitsstunden
+2017-05-22-Spaet---Winnieh: +8 Krankheitsstunden
+2017-05-23-Spaet---Winnieh: +8 Krankheitsstunden
+2017-05-24-Spaet---Winnieh: +8 Krankheitsstunden
+------------------------------Re-Scheduling----------------------------------
+Winnieh Pooh
+2017-05-21
+2017-05-22
+Ersatz notwendig 
+2017-05-23
+Ersatz notwendig 
+2017-05-24
+Ersatz notwendig 
+2017-05-25
+[['2017-05-22', 'Spaet'], ['2017-05-23', 'Spaet'], ['2017-05-24', 'Spaet']]
+2017-05-22
+2017-05-23
+2017-05-24
+[[['2017-05-22', 'Spaet'], 'Benjamin Bluemchen'], [['2017-05-22', 'Spaet'], 'Justus Jonas'], [['2017-05-22', 'Spaet'], 'Bob Andrews'], [['2017-05-23', 'Spaet'], 'Benjamin Bluemchen'], [['2017-05-23', 'Spaet'], 'Justus Jonas'], [['2017-05-24', 'Spaet'], 'Bibi Blocksberg'], [['2017-05-24', 'Spaet'], 'Benjamin Bluemchen']]
+Wahrscheinlichkeit 0.7697219253415652 fuer Annahme der Schicht von Benjamin Bluemchen
+Wahrscheinlichkeit 0.7564252340142218 fuer Annahme der Schicht von Benjamin Bluemchen
+Wahrscheinlichkeit 0.6615862179392051 fuer Annahme der Schicht von Bibi Blocksberg
+Gefundener Ersatz: [[['2017-05-22', 'Spaet'], 'Benjamin Bluemchen'], [['2017-05-23', 'Spaet'], 'Benjamin Bluemchen'], [['2017-05-24', 'Spaet'], 'Bibi Blocksberg']]
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-21 22:00:00: <Test.event.shiftEnd object at 0x0361B6D0>
+Justus: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-22 01:00:00: <Test.event.vacationEnd object at 0x0361BB50>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-22 06:00:00: <Test.event.shiftBegin object at 0x0361B690>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-22 13:30:00: <Test.event.shiftBegin object at 0x034CC4B0>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-22 14:30:00: <Test.event.shiftEnd object at 0x034CC170>
+Bibi: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-22 22:00:00: <Test.event.shiftEnd object at 0x034CC030>
+Minnie: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-23 00:30:00: <Test.event.vacationBegin object at 0x0361B3D0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-23 06:00:00: <Test.event.shiftBegin object at 0x034CCAB0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: working
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-23 13:30:00: <Test.event.shiftBegin object at 0x034CCF30>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: working
+Bob Andrews: working
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-23 14:30:00: <Test.event.shiftEnd object at 0x034CC6F0>
+Peter: +8 Arbeitsstunden
+Bob: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-23 22:00:00: <Test.event.shiftEnd object at 0x034CCED0>
+Bibi: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-24 06:00:00: <Test.event.shiftBegin object at 0x034921B0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: working
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-24 13:30:00: <Test.event.shiftBegin object at 0x034921F0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: working
+Bob Andrews: working
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-24 14:30:00: <Test.event.shiftEnd object at 0x034921D0>
+Justus: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: working
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-24 22:00:00: <Test.event.shiftEnd object at 0x03492950>
+Bibi: +8 Arbeitsstunden
+Bob: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-25 00:30:00: <Test.event.vacationBegin object at 0x034CC530>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-25 01:00:00: <Test.event.vacationEnd object at 0x034CC550>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-25 06:00:00: <Test.event.shiftBegin object at 0x034925D0>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-25 13:30:00: <Test.event.shiftBegin object at 0x0361E850>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: sick
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-25 14:30:00: <Test.event.shiftEnd object at 0x0361EAF0>
+Bibi: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: sick
+Bibi Blocksberg: none
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-25 17:30:00: <Test.event.illnessBegin object at 0x034CC110>--Bibi
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: sick
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-26-Frueh---Bibi: +8 Krankheitsstunden
+2017-05-30-Frueh---Bibi: +8 Krankheitsstunden
+------------------------------Re-Scheduling----------------------------------
+Bibi Blocksberg
+2017-05-25
+2017-05-26
+Ersatz notwendig 
+2017-05-27
+2017-05-28
+2017-05-29
+2017-05-30
+Ersatz notwendig 
+[['2017-05-26', 'Frueh'], ['2017-05-30', 'Frueh']]
+2017-05-26
+2017-05-30
+[[['2017-05-26', 'Frueh'], 'Winnieh Pooh'], [['2017-05-26', 'Frueh'], 'Peter Shaw'], [['2017-05-30', 'Frueh'], 'Benjamin Bluemchen'], [['2017-05-30', 'Frueh'], 'Bob Andrews']]
+Wahrscheinlichkeit 0.16388080875901112 fuer Annahme der Schicht von Winnieh Pooh
+Wahrscheinlichkeit 0.6761072940820207 fuer Annahme der Schicht von Peter Shaw
+Wahrscheinlichkeit 0.9261715467138718 fuer Annahme der Schicht von Benjamin Bluemchen
+Gefundener Ersatz: [[['2017-05-26', 'Frueh'], 'Peter Shaw'], [['2017-05-30', 'Frueh'], 'Benjamin Bluemchen']]
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-25 22:00:00: <Test.event.shiftEnd object at 0x0361E7D0>
+Minnie: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: sick
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-25 23:30:00: <Test.event.illnessEnd object at 0x034CCEB0>--Winnieh
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-26 06:00:00: <Test.event.shiftBegin object at 0x0361E870>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: working
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-26 13:30:00: <Test.event.shiftBegin object at 0x03492690>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: working
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-26 14:30:00: <Test.event.shiftEnd object at 0x03492610>
+Justus: +8 Arbeitsstunden
+Peter: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-26 22:00:00: <Test.event.shiftEnd object at 0x0361C7B0>
+Minnie: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-27 06:00:00: <Test.event.shiftBegin object at 0x0361C870>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-27 13:30:00: <Test.event.shiftBegin object at 0x0361C910>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-27 14:30:00: <Test.event.shiftEnd object at 0x0361CF50>
+Winnieh: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-27 22:00:00: <Test.event.shiftEnd object at 0x0361C030>
+Minnie: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-28 06:00:00: <Test.event.shiftBegin object at 0x0361C2F0>
+Donald Duck: none
+Minnie Mouse: none
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-28 13:30:00: <Test.event.shiftBegin object at 0x0361C230>
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-28 14:30:00: <Test.event.shiftEnd object at 0x0361C6F0>
+Winnieh: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: working
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-28 16:30:00: <Test.event.illnessBegin object at 0x03492A50>--Minnie
+Donald Duck: none
+Minnie Mouse: sick
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-28-Spaet---Minnie: +5:00:00 Krankheitsstunden
+2017-05-28-Spaet---Minnie: +3:00:00 Arbeitsstunden
+------------------------------Re-Scheduling----------------------------------
+Minnie Mouse
+2017-05-28
+2017-05-29
+2017-05-30
+2017-05-31
+Keine Schichten sind von Mitarbeiterausfall betroffen. 
+[]
+Gefundener Ersatz: []
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-28 22:00:00: <Test.event.shiftEnd object at 0x0361CA50>
+Benjamin: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: sick
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-29 00:30:00: <Test.event.vacationBegin object at 0x03492970>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: vacation
+Karla Kolumna: vacation
+Leih Nurse: none
+2017-05-29 01:00:00: <Test.event.vacationEnd object at 0x0361EE30>
+Donald Duck: none
 Minnie Mouse: vacation
 Winnieh Pooh: none
 Bibi Blocksberg: sick
@@ -296,9 +1929,46 @@ Benjamin Bluemchen: none
 Justus Jonas: none
 Peter Shaw: none
 Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-29 06:00:00: <Test.event.shiftBegin object at 0x0361EA30>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: none
+Bob Andrews: none
 Karla Kolumna: working
 Leih Nurse: none
-2017-05-05 22:00:00: <Test.event.shiftEnd object at 0x00000273DB33B780>
+2017-05-29 13:30:00: <Test.event.shiftBegin object at 0x036202F0>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-29 14:30:00: <Test.event.shiftEnd object at 0x03620810>
+Winnieh: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: none
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-29 22:00:00: <Test.event.shiftEnd object at 0x03620850>
+Benjamin: +8 Arbeitsstunden
+Justus: +8 Arbeitsstunden
 Donald Duck: none
 Minnie Mouse: vacation
 Winnieh Pooh: none
@@ -309,381 +1979,66 @@ Peter Shaw: none
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-06 01:00:00: <Test.event.vacationEnd object at 0x00000273DB329240>
+2017-05-30 00:30:00: <Test.event.vacationBegin object at 0x03620C10>
 Donald Duck: none
 Minnie Mouse: vacation
 Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-06 06:00:00: <Test.event.shiftBegin object at 0x00000273DB33B9E8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-06 09:30:00: <Test.event.illnessBegin object at 0x00000273DB329D30>--Donald
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-06 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3079B0>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-06 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3075F8>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-06 22:00:00: <Test.event.shiftEnd object at 0x00000273DB300F60>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-07 06:00:00: <Test.event.shiftBegin object at 0x00000273DB35A9B0>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-07 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3B8828>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-07 14:30:00: <Test.event.shiftEnd object at 0x00000273DB37A8D0>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-07 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3B87B8>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-08 00:30:00: <Test.event.vacationBegin object at 0x00000273DB321F98>
-Donald Duck: vacation
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: vacation
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-08 05:30:00: <Test.event.illnessEnd object at 0x00000273DB329AC8>--Bibi
-Donald Duck: vacation
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: vacation
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-08 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3B8A20>
-Donald Duck: vacation
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: vacation
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-08 09:30:00: <Test.event.illnessEnd object at 0x00000273DB303E10>--Donald
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: vacation
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-08 13:30:00: <Test.event.shiftBegin object at 0x00000273D99DD320>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: vacation
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-08 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3B8EB8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: vacation
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-08 22:00:00: <Test.event.shiftEnd object at 0x00000273D99DD2E8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: vacation
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-08 23:30:00: <Test.event.illnessBegin object at 0x00000273DB308B70>--Donald
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: vacation
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-09 01:00:00: <Test.event.vacationEnd object at 0x00000273DB2E0CC0>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-09 06:00:00: <Test.event.shiftBegin object at 0x00000273D99DD630>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-09 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C57B8>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-09 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C5550>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-09 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C5748>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-10 00:30:00: <Test.event.vacationBegin object at 0x00000273DB3B8BE0>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-10 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C5978>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-10 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C5FD0>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-10 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C5DD8>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-10 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C5F98>
-Donald Duck: sick
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-10 23:30:00: <Test.event.illnessEnd object at 0x00000273D99DDAC8>--Donald
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-11 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C42E8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-11 13:30:00: <Test.event.shiftBegin object at 0x00000273DB37A7F0>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-11 14:30:00: <Test.event.shiftEnd object at 0x00000273D99E1C18>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-11 22:00:00: <Test.event.shiftEnd object at 0x00000273DB37AFD0>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-12 00:30:00: <Test.event.vacationBegin object at 0x00000273DB3C5B70>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
+Bibi Blocksberg: sick
 Benjamin Bluemchen: none
 Justus Jonas: none
 Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-12 01:00:00: <Test.event.vacationEnd object at 0x00000273D99DDCC0>
+2017-05-30 06:00:00: <Test.event.shiftBegin object at 0x03620350>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-30 13:30:00: <Test.event.shiftBegin object at 0x0361E830>
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: sick
+Benjamin Bluemchen: working
+Justus Jonas: working
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-30 14:30:00: <Test.event.shiftEnd object at 0x0361EA50>
+Winnieh: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: working
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-30 22:00:00: <Test.event.shiftEnd object at 0x0361EAB0>
+Justus: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: sick
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: none
+Leih Nurse: none
+2017-05-30 23:30:00: <Test.event.illnessEnd object at 0x03494170>--Bibi
 Donald Duck: none
 Minnie Mouse: vacation
 Winnieh Pooh: none
@@ -694,41 +2049,63 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-12 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3078D0>
+2017-05-31 06:00:00: <Test.event.shiftBegin object at 0x0361E8F0>
 Donald Duck: none
 Minnie Mouse: vacation
-Winnieh Pooh: none
+Winnieh Pooh: working
 Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: vacation
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-12 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3B8978>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: vacation
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-12 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3B8080>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
 Benjamin Bluemchen: working
 Justus Jonas: none
 Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-12 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3B8940>
+2017-05-31 13:30:00: <Test.event.shiftBegin object at 0x0361E8B0>
 Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: working
+Bibi Blocksberg: working
+Benjamin Bluemchen: working
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-31 14:30:00: <Test.event.shiftEnd object at 0x0361E7F0>
+Winnieh: +8 Arbeitsstunden
+Benjamin: +8 Arbeitsstunden
+Donald Duck: none
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+2017-05-31 20:00:00: <Test.event.illnessBegin object at 0x03620C70>--Donald
+Donald Duck: sick
+Minnie Mouse: vacation
+Winnieh Pooh: none
+Bibi Blocksberg: working
+Benjamin Bluemchen: none
+Justus Jonas: none
+Peter Shaw: vacation
+Bob Andrews: none
+Karla Kolumna: working
+Leih Nurse: none
+------------------------------Re-Scheduling----------------------------------
+Donald Duck
+2017-05-31
+Keine Schichten sind von Mitarbeiterausfall betroffen. 
+[]
+Gefundener Ersatz: []
+---------------------------Ende Re-Scheduling--------------------------------
+2017-05-31 22:00:00: <Test.event.shiftEnd object at 0x0361EA70>
+Bibi: +8 Arbeitsstunden
+Karla: +8 Arbeitsstunden
+Donald Duck: sick
 Minnie Mouse: vacation
 Winnieh Pooh: none
 Bibi Blocksberg: none
@@ -738,809 +2115,155 @@ Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-13 01:00:00: <Test.event.vacationEnd object at 0x00000273DB3990F0>
-Donald Duck: none
-Minnie Mouse: vacation
+2017-05-31 23:30:00: <Test.event.illnessEnd object at 0x03620830>--Minnie
+Donald Duck: sick
+Minnie Mouse: none
 Winnieh Pooh: none
 Bibi Blocksberg: none
 Benjamin Bluemchen: none
 Justus Jonas: none
-Peter Shaw: none
+Peter Shaw: vacation
 Bob Andrews: none
 Karla Kolumna: none
 Leih Nurse: none
-2017-05-13 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3B8A58>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-13 13:30:00: <Test.event.shiftBegin object at 0x00000273D99DD400>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-13 14:30:00: <Test.event.shiftEnd object at 0x00000273D99DD0B8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-13 22:00:00: <Test.event.shiftEnd object at 0x00000273D99DD390>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-14 06:00:00: <Test.event.shiftBegin object at 0x00000273D99DD588>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-14 13:30:00: <Test.event.shiftBegin object at 0x00000273D99DDDA0>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-14 14:30:00: <Test.event.shiftEnd object at 0x00000273D99DD748>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-14 22:00:00: <Test.event.shiftEnd object at 0x00000273D99DDBE0>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-15 01:00:00: <Test.event.vacationEnd object at 0x00000273DB3B8DA0>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-15 06:00:00: <Test.event.shiftBegin object at 0x00000273D99DDF60>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-15 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C5EB8>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-15 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C59B0>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-15 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C5E48>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-16 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C4160>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-16 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C4780>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-16 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C4320>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-16 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C4710>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-17 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C49B0>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-17 13:30:00: <Test.event.shiftBegin object at 0x00000273DB307780>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-17 14:30:00: <Test.event.shiftEnd object at 0x00000273DB2F7128>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-17 22:00:00: <Test.event.shiftEnd object at 0x00000273DB307710>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-18 00:30:00: <Test.event.vacationBegin object at 0x00000273DB307B70>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-18 06:00:00: <Test.event.shiftBegin object at 0x00000273DB307C50>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-18 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3B8D68>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-18 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3B89B0>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-18 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3B8C50>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-19 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3B8EF0>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: working
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-19 13:30:00: <Test.event.shiftBegin object at 0x00000273D99DD6A0>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: working
-Leih Nurse: none
-2017-05-19 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3B8F28>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-19 22:00:00: <Test.event.shiftEnd object at 0x00000273D99DD518>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: none
-Leih Nurse: none
-2017-05-20 00:30:00: <Test.event.vacationBegin object at 0x00000273DB307E80>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: vacation
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-20 01:00:00: <Test.event.vacationEnd object at 0x00000273D99DDEF0>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-20 06:00:00: <Test.event.shiftBegin object at 0x00000273D99DD898>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: working
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-20 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C5BE0>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: working
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-20 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C5898>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-20 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C5A90>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-21 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C5E10>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: working
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-21 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C4438>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: working
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-21 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C5F60>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-21 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C43C8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-22 01:00:00: <Test.event.vacationEnd object at 0x00000273DB3C5668>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-22 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C45F8>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-22 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C4DD8>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-22 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C4B00>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-22 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C4D68>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-23 00:30:00: <Test.event.vacationBegin object at 0x00000273D99DDC50>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-23 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C4FD0>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: working
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-23 13:30:00: <Test.event.shiftBegin object at 0x00000273DB307940>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: working
-Bob Andrews: working
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-23 14:30:00: <Test.event.shiftEnd object at 0x00000273DB35A1D0>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-23 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3079E8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-24 06:00:00: <Test.event.shiftBegin object at 0x00000273DB307DD8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: working
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-24 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3B8898>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: working
-Bob Andrews: working
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-24 14:30:00: <Test.event.shiftEnd object at 0x00000273DB307CF8>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: working
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-24 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3B8908>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: none
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-25 00:30:00: <Test.event.vacationBegin object at 0x00000273DB2E0E48>
-Donald Duck: none
-Minnie Mouse: vacation
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-25 01:00:00: <Test.event.vacationEnd object at 0x00000273DB3C4828>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-25 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3B8D30>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-25 13:30:00: <Test.event.shiftBegin object at 0x00000273D99DD978>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-25 14:30:00: <Test.event.shiftEnd object at 0x00000273D99DD550>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-25 22:00:00: <Test.event.shiftEnd object at 0x00000273D99DD828>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-26 06:00:00: <Test.event.shiftBegin object at 0x00000273D99DDE80>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-26 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C5C88>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: working
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-26 14:30:00: <Test.event.shiftEnd object at 0x00000273D99DD9B0>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-26 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C5C18>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-27 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C5DA0>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-27 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C4668>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-27 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C5E80>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-27 22:00:00: <Test.event.shiftEnd object at 0x00000273DB3C47F0>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-28 06:00:00: <Test.event.shiftBegin object at 0x00000273DB3C4A58>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-28 13:30:00: <Test.event.shiftBegin object at 0x00000273DB3C4EB8>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: working
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: working
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-28 14:30:00: <Test.event.shiftEnd object at 0x00000273DB3C4C88>
-Donald Duck: none
-Minnie Mouse: working
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: working
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-28 22:00:00: <Test.event.shiftEnd object at 0x00000273D99F30F0>
-Donald Duck: none
-Minnie Mouse: none
-Winnieh Pooh: none
-Bibi Blocksberg: none
-Benjamin Bluemchen: none
-Justus Jonas: none
-Peter Shaw: none
-Bob Andrews: vacation
-Karla Kolumna: vacation
-Leih Nurse: none
-2017-05-29 00:30:00: <Test.event.vacationBegin object at 0x00000273DB3B8F60>
-Donald Duck: none
-Minnie Mouse: vacation
+####################################################################################
+Ende der Simulation
+####################################################################################
+
+
+
+####################################################################################
+Zusammenfassung der Ergebnisse der Simulation
+####################################################################################
+
+Urspruenglich geplante Stunden im Simulationszeitraum
+------------------------------------------
+
+Donald Duck: 32
+Minnie Mouse: 80
+Winnieh Pooh: 176
+Bibi Blocksberg: 136
+Benjamin Bluemchen: 136
+Justus Jonas: 152
+Peter Shaw: 104
+Bob Andrews: 48
+Karla Kolumna: 128
+Leih Nurse: 0
+
+Gearbeitete Stunden im Simulationszeitraum
+------------------------------------------
+
+Donald Duck: 32
+Minnie Mouse: 75.0
+Winnieh Pooh: 114.5
+Bibi Blocksberg: 131.0
+Benjamin Bluemchen: 152
+Justus Jonas: 160
+Peter Shaw: 112
+Bob Andrews: 56
+Karla Kolumna: 128
+Leih Nurse: 0
+
+Aufgrund von Krankheit verpasste Stunden im Simulationszeitraum
+------------------------------------------
+
+Donald Duck: 0
+Minnie Mouse: 5.0
+Winnieh Pooh: 69.5
+Bibi Blocksberg: 29.0
+Benjamin Bluemchen: 8
+Justus Jonas: 0
+Peter Shaw: 0
+Bob Andrews: 0
+Karla Kolumna: 0
+Leih Nurse: 0
+
+Durch Re-Scheduling zugewiesene Zusatzstunden
+------------------------------------------
+
+Donald Duck: 0
+Minnie Mouse: 0
+Winnieh Pooh: 16
+Bibi Blocksberg: 24
+Benjamin Bluemchen: 24
+Justus Jonas: 8
+Peter Shaw: 8
+Bob Andrews: 8
+Karla Kolumna: 0
+Leih Nurse: 8
+
+Anzahl der Krankheitsbedingten Ausfaelle
+------------------------------------------
+
+Donald Duck: 2
+Minnie Mouse: 2
+Winnieh Pooh: 2
+Bibi Blocksberg: 2
+Benjamin Bluemchen: 1
+Justus Jonas: 0
+Peter Shaw: 1
+Bob Andrews: 0
+Karla Kolumna: 0
+Leih Nurse: 0
+
+Anzahl der Urlaubsstunden
+------------------------------------------
+
+Donald Duck: 146.3
+Minnie Mouse: 84.70000000000002
+Winnieh Pooh: 7.7
+Bibi Blocksberg: 0
+Benjamin Bluemchen: 6.16
+Justus Jonas: 0
+Peter Shaw: 24.64
+Bob Andrews: 6.16
+Karla Kolumna: 38.5
+Leih Nurse: 0
+
+Anzahl der Urlaubstage
+------------------------------------------
+
+Donald Duck: 19
+Minnie Mouse: 11
+Winnieh Pooh: 1
+Bibi Blocksberg: 0
+Benjamin Bluemchen: 1
+Justus Jonas: 0
+Peter Shaw: 4
+Bob Andrews: 1
+Karla Kolumna: 5
+Leih Nurse: 0
+
+Vertraglich verpflichtete Arbeitsstunden im Monat
+------------------------------------------
+
+Donald Duck: 177.09999999999997
+Minnie Mouse: 177.09999999999997
+Winnieh Pooh: 177.09999999999997
+Bibi Blocksberg: 132.82500000000005
+Benjamin Bluemchen: 141.67999999999995
+Justus Jonas: 177.09999999999997
+Peter Shaw: 141.67999999999995
+Bob Andrews: 141.67999999999995
+Karla Kolumna: 177.09999999999997
+Leih Nurse: 0
+
+Ueber- / Unterstunden
+------------------------------------------
+
+Donald Duck: 1.2000000000000455
+Minnie Mouse: -12.399999999999949
+Winnieh Pooh: 14.600000000000023
+Bibi Blocksberg: 27.174999999999955
+Benjamin Bluemchen: 24.480000000000047
+Justus Jonas: -17.099999999999966
+Peter Shaw: -5.039999999999964
+Bob Andrews: -79.51999999999995
+Karla Kolumna: -10.599999999999966
+Leih Nurse: 0
+
+
+
+####################################################################################
+Laufzeit der Simulation: 7.825966844530875 sec 
+####################################################################################

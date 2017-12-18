@@ -19,7 +19,10 @@ class Employee(object):
         self.shifts = eShifts
         self.avgIllnessDaysPerMonth = 1             # Durchschnittlche Krankheitstage pro Monat
         self.illnessDaysThisMonth = 0               # Anzahl tatsaechlicher Krankheitstage
+        self.illnessHoursThisMonth = 0              # Anzahl Krankheitsstunden
+        self.extraHours = 0                         # Anzahl Stunden ueber Re-Scheduling eingeteilt
         self.hoursWorked = 0
+        self.vacationHours = 0
         
     
     

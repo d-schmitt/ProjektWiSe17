@@ -11,12 +11,17 @@ basicInfos = getRosterData()                        # Basis Constraints einlesen
 empList = getEmployees()                            # MA-Daten einlesen
 R1 = Roster(newRoster, basicInfos, empList)         # Datenstruktur Roster mit Daten erzeugen
 
+print(R1.getSickShifts(52, datetime(2017, 5, 3, 8, 0), datetime(2017, 5, 7, 23, 30)))
+#print(R1.addSickHours(49, datetime(2017, 5, 4, 11, 0), datetime(2017, 5, 9, 11, 0)))
+
+#print(R1.getShiftDefByName("Spaet"))
+
 #print(R1.getDays())
 
-print(R1.getShiftByEmployeeByDay(datetime(2017, 5, 4, 0, 0), "Justus Jonas"))
+#print(R1.getShiftByEmployeeByDay(datetime(2017, 5, 4, 0, 0), "Justus Jonas"))
 
-for e in R1.employees:
-   print(e.fName + ": " + str(e.shifts))
+#for e in R1.employees:
+   #print(e.fName + ": " + str(e.shifts))
 
 #print(R1.getSundays())
 

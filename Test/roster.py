@@ -192,12 +192,12 @@ class Roster(object):
     
     
     # Gibt aufgrund der Wahrscheinlichkeit, mit der einzelne MAs krank werden den naechsten kranken MA zurueck
-    def determineIllness(self):                
+    def determineIllness(self, empID):                
         iDays = 0               # Summiert die Differenzen zum Durchschnitt auf, um eine Zufallsauswahl treffen zu koennen 
         iDistribution = {}      # Dict zur Speicherung von MAs und Krankheitswahrscheinlichkeitsverteilung
         retID = 0               # Variable zur Speicherung  der ID des ausgwaehlten MAs
         for e in self.employees:                    # Wahrscheinlichkeitsverteilung erstellen
-            if e.eID != 0:                      # Ohne Zeitarbeitsnurse
+            if e.eID != 0 and e.eID != empID:                      # Ohne Zeitarbeitsnurse
                 iDays = iDays + (e.avgIllnessDaysPerMonth-e.illnessDaysThisMonth)
                 iDistribution.update({e.eID:iDays})    
         for key, value in iDistribution.items():    # Per Zufallszahl aus der Wahrscheinlichkeistverteilung waehlen
@@ -207,7 +207,6 @@ class Roster(object):
         return(self.getEmployeeById(retID))         # MA Objekt zurueckgeben
     
     # terminiert den naechsten Krankheitsbedingten Ausfall
-    # TODO: Vereinfachte Version geht von exakt definierter Anzahl an krankheiten aus und terminiert genau gleichmaessig
     def determineIllnessTime(self, currentTime):
         # uniFormDelta erzeugt gleichmaessige Zeitschritte
         uniformDelta = timedelta(minutes=int((self.cntDays*48)/self.avgIllnessDaysPerMonth)*30)
@@ -218,20 +217,120 @@ class Roster(object):
         lastTime = datetime.strptime(self.start, '%Y-%m-%d')+timedelta(days=self.cntDays)
         if nTime < lastTime:        # Damit SImulation am letzten Tag endet
             return(nTime)
+        
+        
+    # gibt die Schichtdefinition zu einem bestimmten Schichtnamen zurueck
+    def getShiftDefByName(self, name):
+        for shift in self.shiftTypes:
+            if shift["name"] == name:
+                return shift
+        return 0
+    
+    
+    # gibt ein Dictionary aller Schichten zu einer Krankheit eines bestimmten MA
+    def getSickShifts(self, eID, startDate, endDate):
+        # Uhrzeit auf 0 Uhr setzen, da Vergleichszeiten keine Stunden haben
+        startDate0 = startDate-timedelta(hours=startDate.hour, minutes=startDate.minute)
+        endDate0 = endDate-timedelta(hours=endDate.hour, minutes=endDate.minute)
+        emp = self.getEmployeeById(eID)
+        relevantShifts = {}
+        for day, shift in emp.shifts.items():
+            if datetime.strptime(day, '%Y-%m-%d') >= startDate0 and datetime.strptime(day, '%Y-%m-%d') <= endDate0:
+                sType = self.getShiftDefByName(shift)
+                if sType != 0:
+                    relevantShifts.update({day:shift})
+        return(relevantShifts)
+    
+    
+    # Zaehlt die Krankheitsstunden eines MA hoch, wenn dieser krank wird
+    def addSickHours(self, eID, startDate, duration, log_file, currentTime):
+        emp = self.getEmployeeById(eID)
+        endDat = startDate + duration
+        # Uhrzeit auf 0 Uhr setzen, da Vergleichszeiten keine Stunden haben
+        startDate0 = startDate-timedelta(hours=startDate.hour, minutes=startDate.minute)
+        endDate0 = endDat-timedelta(hours=endDat.hour, minutes=endDat.minute)
+        sickHours = 0
+        for day, shift in emp.shifts.items():
+            sType = self.getShiftDefByName(shift)
+            if sType != 0:
+                # nur Schichten einbeziehen, die im Krankheitszeitraum liegen
+                if datetime.strptime(day, '%Y-%m-%d') >= startDate0 and datetime.strptime(day, '%Y-%m-%d') <= endDate0:
+                    # Am ersten Krankhetstag pruefen, ob MA vor Schichtbeginn krank wird oder danach
+                    if datetime.strptime(day, '%Y-%m-%d') == startDate0:
+                        # Mitarbeiter wird vor Schichtbeginn krank
+                        if currentTime.hour < int(sType["startTime"][:2]):
+                            emp.illnessHoursThisMonth = emp.illnessHoursThisMonth + sType["workingHours"]
+                            log_file.write(str(day) + "-" + str(shift) + "---" + str(emp.fName) + ": +" + str(sType["workingHours"]) + " Krankheitsstunden\n")
+                            print("MA wird vor Schichtbeginn krank")
+                        # Mitarbeiter wird vor Schichtbeginn krank
+                        elif currentTime.hour == int(sType["startTime"][:2]) and currentTime.minute <= int(sType["startTime"][3:]):
+                            emp.illnessHoursThisMonth = emp.illnessHoursThisMonth + sType["workingHours"]
+                            log_file.write(str(day) + "-" + str(shift) + "---" + str(emp.fName) + ": +" + str(sType["workingHours"]) + " Krankheitsstunden\n")
+                            print("MA wird vor Schichtbeginn krank")
+                        # Waehrend der Schicht
+                        elif currentTime.hour < int(sType["endTime"][:2]):
+                            # Bereits gearbeitete Zeit berechnen
+                            workHs = currentTime.hour - int(sType["startTime"][:2])
+                            workMins = currentTime.minute - int(sType["startTime"][3:])
+                            workTime = timedelta(hours=workHs, minutes=workMins)
+                            # Verbleibende Zeit berechnen
+                            sickHs = int(sType["endTime"][:2]) - currentTime.hour
+                            sickMins = int(sType["endTime"][3:]) - currentTime.minute
+                            sickTime = timedelta(hours=sickHs, minutes=sickMins-30)
+                            # Dem MA die berechneten Zeiten gutschreiben
+                            emp.illnessHoursThisMonth = emp.illnessHoursThisMonth + sickTime.total_seconds()/3600
+                            emp.hoursWorked = emp.hoursWorked + workTime.total_seconds()/3600
+                            log_file.write(str(day) + "-" + str(shift) + "---" + str(emp.fName) + ": +" + str(sickTime) + " Krankheitsstunden\n")
+                            log_file.write(str(day) + "-" + str(shift) + "---" + str(emp.fName) + ": +" + str(workTime) + " Arbeitsstunden\n")
+                            print("MA wird waehrend der Schicht krank")
+                        # Waehrend der Schicht
+                        elif currentTime.hour == int(sType["endTime"][:2]) and currentTime.minute < int(sType["endTime"][3:]):
+                            # Bereits gearbeitete Zeit berechnen
+                            workHs = currentTime.hour - int(sType["startTime"][:2])
+                            workMins = currentTime.minute - int(sType["startTime"][3:])
+                            workTime = timedelta(hours=workHs, minutes=workMins)
+                            # Verbleibende Zeit berechnen
+                            sickHs = int(sType["endTime"][:2]) - currentTime.hour
+                            sickMins = int(sType["endTime"][3:]) - currentTime.minute
+                            sickTime = timedelta(hours=sickHs, minutes=sickMins-30)
+                            # Dem MA die berechneten Zeiten gutschreiben
+                            emp.illnessHoursThisMonth = emp.illnessHoursThisMonth + sickTime.total_seconds()/3600
+                            emp.hoursWorked = emp.hoursWorked + workTime.total_seconds()/3600
+                            log_file.write(str(day) + "-" + str(shift) + "---" + str(emp.fName) + ": +" + str(sickTime) + " Krankheitsstunden\n")
+                            log_file.write(str(day) + "-" + str(shift) + "---" + str(emp.fName) + ": +" + str(workTime) + " Arbeitsstunden\n")
+                            print("MA wird waehrend der Schicht krank")
+                        # Nach der Schicht
+                        else:
+                            print("MA wird nach der Schicht krank")
+                    # Falls es sich nicht um den ersten Krankheitstag handelt
+                    else:
+                        emp.illnessHoursThisMonth = emp.illnessHoursThisMonth + sType["workingHours"]
+                        log_file.write(str(day) + "-" + str(shift) + "---" + str(emp.fName) + ": +" + str(sType["workingHours"]) + " Krankheitsstunden\n")
+                                
            
-           
+    
+                    
+    # Funktion gibt den Mitarbeiter mit einem bestimmten Namen zurueck
+    def getEmployeeByName(self, empname):
+        for e in self.employees:
+            ename = e.fName + " " + e.lName
+            if ename==empname:
+                return(e)
+        print("Es existiert kein Mitarbeiter mit der ID " + str(empname)) 
            
            
     #----------------------------------------------------------------------------------------------------------------
     # Re-Scheduling
     #----------------------------------------------------------------------------------------------------------------
     # currentTime: datetime, empID: integer, duration: integer (kann bei Bedarf auch als timedelte uebergeben werden)
-    def reSchedule(self, currentTime, empID, duration):
+    def reSchedule(self, currentTime, empID, duration, log_file):
         """
         print(currentTime)
         print(empID)
         print(duration)
         """
+        
+        log_file.write("------------------------------Re-Scheduling----------------------------------\n")
 
         # Input
         #currentTime = datetime.strptime(self.start, '%Y-%m-%d')
@@ -246,36 +345,56 @@ class Roster(object):
         #####################################################################
         # Testing
         RTest = copy.deepcopy(self)
-        print(getEmployeeName(getEmployeeById(self, illemID)))
+        log_file.write(getEmployeeName(getEmployeeById(self, illemID)) + "\n")
         #####################################################################
         # Determine Start and End Date of IllnessPeriod
         start_date = date(currentTime.year, currentTime.month, currentTime.day)
-        illnessEndDate = currentTime + timedelta(days=illnessPeriod)
+        illnessEndDate = start_date + timedelta(days=illnessPeriod)
         end_date = date(illnessEndDate.year, illnessEndDate.month, illnessEndDate.day)
 
         # Liegt Ende der Krankheit in Periode?
-        end_date_full_period = datetime.strptime(self.start,"%Y-%m-%d")+ timedelta(days=self.cntDays)
+        
+        #------------------------------------------------------------------------------------------------
+        # Die -1 am Ende habe ich geaendert, die muss so bleiben
+        end_date_full_period = datetime.strptime(self.start,"%Y-%m-%d")+timedelta(days=self.cntDays-1)
+        #------------------------------------------------------------------------------------------------
+        
         # wenn Krankheit über Dienstplanungsperiode hinausgeht
         if(end_date >= end_date_full_period.date()):
             end_date = end_date_full_period.date()
 
-        IllnessShift = []  # sammelt Tag und Schicht, für welche Ersatz gefunden werden muss
+        IllnessShift = []  # sammelt Tag und Schicht, fuer welche Ersatz gefunden werden muss
 
+        # TODO: Schau dir hierzu mal die Funktion in Zeile 231 an.
+        # Das ist deutlich weniger Code (uebersichtlicher) und ist in eine Funktion ausgelagert (modularisiert)
+        # und somit wiederverwendbar und weniger fehleranfaellig.
+        # Ausserdem benutzt die Funktion die Datenstruktur Dictionary, welche ebenfalls uebersichtlicher und
+        # perfromanter als 2 Dimensionale Arrays ist.
+        
         # Finde heraus, welche Schichten von Mitarbeiterausfall betroffen sind
-        for single_date in daterange(start_date, end_date):  # Für jeden Tag
+        
+        #----------------------------------------------------------------------------------------------
+        # das Timedelta +1 Tag habe ich geaendert, muss auch so bleiben, weil diese Art von Schleife
+        # den letzten Tag nicht mit einschliesst.
+        for single_date in daterange(start_date, end_date+timedelta(days=1)):  # Für jeden Tag
+        #-----------------------------------------------------------------------------------------------
+        
             sdDay = single_date.strftime("%Y-%m-%d")
-            print(sdDay)
-            for j in self.shiftTypes:  # Für jede Schicht
-                if (getShiftByEmployeeByDateByShift(self, sdDay, getEmployeeById(self, illemID),
-                                                    j['name']) == 1):  # Wenn Mitarbeiter dort arbeitet
-                    print("Ersatz notwendig")
+            log_file.write(sdDay + "\n")
+            
+            for j in self.shiftTypes:  # Fuer jede Schicht
+                schichtbeginn = datetime.strptime(sdDay + " " + j['startTime'] + ":00", "%Y-%m-%d %H:%M:%S") # neu
+                if (getShiftByEmployeeByDateByShift(self, sdDay, getEmployeeById(self, illemID), j['name']) == 1
+                    and schichtbeginn > currentTime):  # nach and neu
+                
+                    log_file.write("Ersatz notwendig \n")
                     IllnessShift.append([sdDay, j['name']])
-                    # hier könnte man nun direkt krank melden
+                    # hier könnte man nun direkt krank melden            
 
         if(len(IllnessShift)==0):
-            print("Keine Schichten sind von Mitarbeiterausfall betroffen.")
+            log_file.write("Keine Schichten sind von Mitarbeiterausfall betroffen. \n")
         else:
-            print(IllnessShift)
+            log_file.write(str(IllnessShift) + "\n")
         # (Wiederhole für jede ausgefallene Schicht:)
 
         # Mitarbeiter Krank melden für alle seine Schichten --> könnte man in schichtausfall integrieren
@@ -288,8 +407,8 @@ class Roster(object):
         if (len(IllnessShift) > 0):  # Wenn es Schichten gibt, welche ausfallen
             # für jede Schicht, wofür ein Ersatz gefunden werden muss
             for i in range(0, len(IllnessShift)):
-                print(IllnessShift[i][0])
-                # überprüfe für jede Nurse
+                log_file.write(IllnessShift[i][0] + "\n")
+                # Ueberprüfe für jede Nurse
                 for j in self.employees:
 
                     # Wenn Nurse an dem Tag noch nicht arbeitet:
@@ -309,7 +428,7 @@ class Roster(object):
                             and checkOffDaysOff(selfcopy)):
                             nurses.append([IllnessShift[i], getEmployeeName(j)])
 
-        print(nurses)
+        log_file.write(str(nurses) + "\n")
 
         IllnessShiftErsatz = []  # Liste mit Ersatz für kranke Schichten
         shiftCount = 0
@@ -324,7 +443,7 @@ class Roster(object):
                 for j in ErsatzNurses:
                     # Berechne Wahrscheinlichkeit für annehmen
                     a = random.random()
-                    print("Wahrscheinlichkeit", a, " für Annahme der Schicht von ", j)
+                    log_file.write("Wahrscheinlichkeit " + str(a) + " fuer Annahme der Schicht von " +  str(j) + "\n")
                     if (a > 0.5):
                         # Assign nurse
                         changeEmployeeShift(self, IllnessShift[shiftCount][0], j, IllnessShift[shiftCount][1])
@@ -338,15 +457,24 @@ class Roster(object):
                 # Einfache Lösung: Zeitarbeitsnurse anstellen
                 changeEmployeeShift(self, IllnessShift[shiftCount][0], 'Leih Nurse', IllnessShift[shiftCount][1])
                 IllnessShiftErsatz.append([IllnessShift[shiftCount], 'Leih Nurse'])
-                print('Leih Nurse eingetragen für', IllnessShift[shiftCount][0])
+                log_file.write('Leih Nurse eingetragen fuer' + str(IllnessShift[shiftCount][0]) + "\n")
                 # Was wenn zwei Mitarbeiter in selber Schicht krank sind? --> zwei Leih Nurses
 
                 # Advanced Lösung: Restriktion ggf. aufweichen (WE z.B.)
             shiftCount += 1
-
-        print("Gefundener Ersatz:",IllnessShiftErsatz)
-        #print(checkMinMaxConsec(self))
         
+        #--------------------------------------------------------------------------------------------------------------
+        # Das habe ich hier eingefuegt, um fuer die re-scheduleten MAs die zusaetzlich gearbeiteten Stunden zu erfassen    
+        for i in IllnessShiftErsatz:
+            e = self.getEmployeeByName(i[1])
+            sType = self.getShiftDefByName(i[0][1])
+            addHours = sType["workingHours"]
+            e.extraHours = e.extraHours + addHours
+        #--------------------------------------------------------------------------------------------------------------
+        
+        log_file.write("Gefundener Ersatz: "  + str(IllnessShiftErsatz) + "\n")
+        #print(checkMinMaxConsec(self))
+        log_file.write("---------------------------Ende Re-Scheduling--------------------------------\n")
             
             
         

@@ -45,12 +45,23 @@ def getEmployeeByName(r, empname):
     print("Es existiert kein Mitarbeiter mit der ID " + str(empname))
 
 # Ändert den Status eines Mitarbeiters in seinem Schichtverzeichnis
+# TODO: durch diese kleine Aenderung kann man die Laufzeit von n^2 auf n reduzieren
+# Ich habe dir zum Vergleich deinen Code kommentiert stehen lassen
 def changeEmployeeShift(r,date,e, status):
+    employee = getEmployeeByName(r, e)
+    for key, value in getEmployeeByName(r, e).shifts.items():
+        if (key == date):
+            employee.shifts[key] = status
+            return(r)
+    print("Der angegebene Tag existiert nicht im Mitarbeiterschichtverzeichnis.")
+    
+    """
     for key, value in getEmployeeByName(r, e).shifts.items():
         if (key == date):
             getEmployeeByName(r, e).shifts[key] = status
             return(r)
     print("Der angegebene Tag existiert nicht im Mitarbeiterschichtverzeichnis.")
+    """
 
 def getNoErsatzNurses(a,nurses):
     # gibt die Anzahl der Nurses für eine bestimmte Schicht und Tag zurück, welche als Ersatz zur Verfügung stehen

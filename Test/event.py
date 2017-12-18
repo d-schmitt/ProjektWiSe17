@@ -85,12 +85,14 @@ class shiftEnd(Event):
         #print("Zustandsaenderungen Schichtende " + self.sType + ":")  
         beginTimeForm = datetime.strptime(self.beginnTime, '%Y-%m-%d %H:%M:%S')  
         workingList = r.getWorkingEmployees(beginTimeForm, self.sType)      # Liste der Mitarbeiter
+        # TODO: Arbeitsstundenberechnung anpassen
         for e in workingList:
             if e.state != "sick":
                 r.changeEmployeeState(e.fName + " " + e.lName, "none")
                 for st in r.shiftTypes:
                     if st["name"] == self.sType:
                         e.hoursWorked = e.hoursWorked + st["workingHours"]
+                        log_file.write(str(e.fName) + ": +" + str(st["workingHours"]) + " Arbeitsstunden\n")
         r.printStates(log_file, alertMA)
         return(r)
     
@@ -151,8 +153,8 @@ class vacationEnd(Event):
 # Spezialereignis: Krankheitsbeginn
 class illnessBegin(Event):
     # Konstruktor
-    def __init__(self, r, currentTime):
-        eTime, eEmployee = self.terminateEvent(r, currentTime)
+    def __init__(self, r, currentTime, lastSick):
+        eTime, eEmployee = self.terminateEvent(r, currentTime, lastSick)
         Event.__init__(self, eTime)
         self. employee = eEmployee
         self.duration = self.terminateDuration()
@@ -164,16 +166,22 @@ class illnessBegin(Event):
         return(iTime)
         
     # Zeitpunkt des Ereignisses terminieren
-    def terminateEvent(self, r, currentTime):
-        iEmployee = r.determineIllness()
+    def terminateEvent(self, r, currentTime, lastSick):
+        # durch lastSick wird sichergestellt, dass kein MA krank wird, der schon krank ist
+        iEmployee = r.determineIllness(lastSick)
         iTime = r.determineIllnessTime(currentTime)
         return(iTime, iEmployee)
     
     # Zustandaenderung durchfuehren    
-    def changeState(self, r, log_file):
+    def changeState(self, r, log_file, currentTime):
         alertMA = 999
+        # Fehlermeldung drin lassen, bis die Ergebnisse der Simulation 100% passen
+        # Zu diesem Fall sollte es nie kommen
+        if self.employee.state == "sick":
+            print(self.employee.fName + " ist Waehrend der Krankheit nochmal krank geworden")
         r.changeEmployeeState(self.employee.fName + " " + self.employee.lName, "sick")
         r.printStates(log_file, alertMA)
+        r.addSickHours(self.employee.eID, currentTime, self.duration, log_file, currentTime)
         return(r)
     
 
@@ -187,7 +195,7 @@ class illnessEnd(Event):
         
     # Zeitpunkt des Ereignisses terminieren
     def terminateEvent(self, r, currentTime, duration):
-        iTime = currentTime+duration
+        iTime = currentTime+duration-timedelta(hours=currentTime.hour, minutes=currentTime.minute)+timedelta(hours=23, minutes=30)
         return(iTime)
     
     # Zustandsaenderung durchfuehren    
