@@ -324,23 +324,18 @@ class Roster(object):
     #----------------------------------------------------------------------------------------------------------------
     # currentTime: datetime, empID: integer, duration: integer (kann bei Bedarf auch als timedelte uebergeben werden)
     def reSchedule(self, currentTime, empID, duration, log_file):
-        """
-        print(currentTime)
-        print(empID)
-        print(duration)
-        """
-        
+
         log_file.write("------------------------------Re-Scheduling----------------------------------\n")
 
         # Input
         #currentTime = datetime.strptime(self.start, '%Y-%m-%d')
         illnessPeriod = duration# illnessPeriod = 5
         illemID = empID # 52
+        sickEmployee = getEmployeeById(self, illemID)
+        sickEmployeeName = getEmployeeName(sickEmployee)
         #####################################################################
 
         # Constraint Testing
-
-
 
         #####################################################################
         # Testing
@@ -352,13 +347,10 @@ class Roster(object):
         illnessEndDate = start_date + timedelta(days=illnessPeriod)
         end_date = date(illnessEndDate.year, illnessEndDate.month, illnessEndDate.day)
 
-        # Liegt Ende der Krankheit in Periode?
-        
         #------------------------------------------------------------------------------------------------
         # Die -1 am Ende habe ich geaendert, die muss so bleiben
         end_date_full_period = datetime.strptime(self.start,"%Y-%m-%d")+timedelta(days=self.cntDays-1)
         #------------------------------------------------------------------------------------------------
-        
         # wenn Krankheit über Dienstplanungsperiode hinausgeht
         if(end_date >= end_date_full_period.date()):
             end_date = end_date_full_period.date()
@@ -384,22 +376,19 @@ class Roster(object):
             
             for j in self.shiftTypes:  # Fuer jede Schicht
                 schichtbeginn = datetime.strptime(sdDay + " " + j['startTime'] + ":00", "%Y-%m-%d %H:%M:%S") # neu
-                if (getShiftByEmployeeByDateByShift(self, sdDay, getEmployeeById(self, illemID), j['name']) == 1
-                    and schichtbeginn > currentTime):  # nach and neu
-                
+                eWorks = getShiftByEmployeeByDateByShift(self, sdDay, sickEmployee, j['name'])
+                if (eWorks == 1 and schichtbeginn > currentTime):  # nach and neu
                     log_file.write("Ersatz notwendig \n")
                     IllnessShift.append([sdDay, j['name']])
-                    # hier könnte man nun direkt krank melden            
+                    # Mitarbeiter Krank melden
+                    changeEmployeeShift(self, sdDay, sickEmployeeName, 'sickDay')
+
 
         if(len(IllnessShift)==0):
             log_file.write("Keine Schichten sind von Mitarbeiterausfall betroffen. \n")
         else:
             log_file.write(str(IllnessShift) + "\n")
         # (Wiederhole für jede ausgefallene Schicht:)
-
-        # Mitarbeiter Krank melden für alle seine Schichten --> könnte man in schichtausfall integrieren
-        for i in range(0, len(IllnessShift)):
-            changeEmployeeShift(self, IllnessShift[i][0], getEmployeeName(getEmployeeById(self, illemID)), 'sickDay')
 
         # Erzeuge eine Liste an Nurses, welche die ausgefallene Schicht ersetzen kann
         nurses = []
@@ -411,10 +400,11 @@ class Roster(object):
                 # Ueberprüfe für jede Nurse
                 for j in self.employees:
 
+                    employeeName = getEmployeeName(j)
+                    employeeWorks = getShiftByEmployeeByDate01(self, IllnessShift[i][0], j)
                     # Wenn Nurse an dem Tag noch nicht arbeitet:
-                    if (getShiftByEmployeeByDate01(self, IllnessShift[i][0], j) == 0 and getEmployeeName(
-                            j) != "Leih Nurse"
-                        and getEmployeeName(j) != getEmployeeName(getEmployeeById(self, illemID))):
+                    if (employeeWorks == 0 and employeeName != "Leih Nurse"
+                        and employeeName != sickEmployeeName):
 
                         # Erzeuge Kopie des bisherigen Rosters
                         # Rostercopy = self
@@ -426,7 +416,7 @@ class Roster(object):
                         # Wenn Rosterkopie-Schichtplan gültige Lösung liefert, füge zu Nurseliste hinzu
                         if (checkShiftAssignments(selfcopy) == True and checkVacationDaysOff(selfcopy) == True
                             and checkOffDaysOff(selfcopy)):
-                            nurses.append([IllnessShift[i], getEmployeeName(j)])
+                            nurses.append([IllnessShift[i], employeeName])
 
         log_file.write(str(nurses) + "\n")
 
@@ -435,9 +425,10 @@ class Roster(object):
         # für jede ermittelte krankheitsschicht:
         for i in IllnessShift:
             ersatz = 0  # bleibt 0, falls kein Ersatz gefunden wird für Schicht i
+            NoErsatzNurses = getNoErsatzNurses(i, nurses)
 
             # Wenn nurses für schicht zur verfügung stehen:
-            if (getNoErsatzNurses(i, nurses) > 0):
+            if (NoErsatzNurses > 0):
                 ErsatzNurses = getErsatzNurseNames(i, nurses)
                 # für jede zum Ersatz stehende Nurse
                 for j in ErsatzNurses:
@@ -453,7 +444,7 @@ class Roster(object):
 
                         # Advanced Lösung: Nehme die Nurse, wo Durchschnitt aus Satisfaction Score + Überstunden minimiert wird (über alle)
 
-            if (getNoErsatzNurses(i, nurses) == 0 or ersatz == 0):
+            if (NoErsatzNurses == 0 or ersatz == 0):
                 # Einfache Lösung: Zeitarbeitsnurse anstellen
                 changeEmployeeShift(self, IllnessShift[shiftCount][0], 'Leih Nurse', IllnessShift[shiftCount][1])
                 IllnessShiftErsatz.append([IllnessShift[shiftCount], 'Leih Nurse'])

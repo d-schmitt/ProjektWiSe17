@@ -54,14 +54,6 @@ def changeEmployeeShift(r,date,e, status):
             employee.shifts[key] = status
             return(r)
     print("Der angegebene Tag existiert nicht im Mitarbeiterschichtverzeichnis.")
-    
-    """
-    for key, value in getEmployeeByName(r, e).shifts.items():
-        if (key == date):
-            getEmployeeByName(r, e).shifts[key] = status
-            return(r)
-    print("Der angegebene Tag existiert nicht im Mitarbeiterschichtverzeichnis.")
-    """
 
 def getNoErsatzNurses(a,nurses):
     # gibt die Anzahl der Nurses für eine bestimmte Schicht und Tag zurück, welche als Ersatz zur Verfügung stehen
@@ -87,14 +79,16 @@ def daterange(start_date, end_date):
 def getConsecStartDay(today,r, employee):
     # findet heraus, ob Tag Start einer Consekutiven Reihe eines Mitarbeiters ist
     # works only for employees who are not a Leih Nurse
+    eWorks = getShiftByEmployeeByDate01(r,today,employee)
     if(today != r.start): # für mitten in der periode
         yesterday = (datetime.strptime(today,"%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
-        if(getShiftByEmployeeByDate01(r,today,employee)==1 and getShiftByEmployeeByDate01(r,yesterday,employee)==0):
+        eWorksY= getShiftByEmployeeByDate01(r, yesterday, employee)
+        if(eWorks==1 and eWorksY==0):
             return(1)
         return(0)
     else: # für ersten Tag der Periode
         # wenn empl. heute arbeitet und last assigned shift type == None
-        if(getShiftByEmployeeByDate01(r,today,employee)==1 and
+        if(eWorks == 1 and
                (employee.history["lastAssignedShiftType"] != "Spaet" and employee.history["lastAssignedShiftType"]!="Frueh")):
             return(1)
         return(0)

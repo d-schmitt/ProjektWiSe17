@@ -187,10 +187,12 @@ def checkMinMaxConsec(roster):
             for i in roster.employees:
                 if (i.lName != "Nurse"): # for all nurses except Leih Nurses
                     startDay = getConsecStartDay(sdDay, roster, i)
-                    if ((getShiftByEmployeeByDate01(roster, sdDay, i) - getShiftByEmployeeByDate01(roster, sdDayBefore,
-                                                                                                   i) - startDay > 0)
-                        or (getShiftByEmployeeByDate01(roster, sdDay, i) - startDay < 0)
-                        or (startDay + getShiftByEmployeeByDate01(roster, sdDayBefore, i) > 1)):
+                    eWorks = getShiftByEmployeeByDate01(roster, sdDay, i)
+                    eWorksY = getShiftByEmployeeByDate01(roster, sdDayBefore, i)
+
+                    if ((eWorks - eWorksY - startDay > 0)
+                        or (eWorks - startDay < 0)
+                        or (startDay + eWorksY > 1)):
                         return False
         else: # for first day in period
             # for each employee
@@ -200,8 +202,147 @@ def checkMinMaxConsec(roster):
                     oldPeriod=0
                     if(i.history["lastAssignedShiftType"]=="Spaet" or i.history["lastAssignedShiftType"]=="Frueh"):
                         oldPeriod=1
-                    if ((getShiftByEmployeeByDate01(roster, sdDay, i) - oldPeriod - startDay > 0)
-                        or (getShiftByEmployeeByDate01(roster, sdDay, i) - startDay < 0)
+                    eWorks = getShiftByEmployeeByDate01(roster, sdDay, i)
+                    if ((eWorks - oldPeriod - startDay > 0)
+                        or (eWorks - startDay < 0)
                         or (startDay + oldPeriod > 1)):
                         return False
+    return True
+
+def forbiddenPatterns(roster):
+    """
+
+    :return:
+    """
+    currentTime = datetime.strptime(roster.start, '%Y-%m-%d')
+
+    start_date = date(currentTime.year, currentTime.month, currentTime.day)
+    end_period = currentTime + timedelta(days=roster.cntDays-1)
+    end_date = date(end_period.year, end_period.month, end_period.day)
+
+
+    for f in roster.forbidden: # für jede verbotene Schichtreihenfolge
+        for single_date in daterange(start_date, end_date): # for each day
+            sdDay = single_date.strftime("%Y-%m-%d")
+            sdDayTomorrow = (single_date + timedelta(days=1)).strftime("%Y-%m-%d")
+            for i in roster.employees: # for each employee
+                if (i.lName != "Nurse"):  # for all nurses except Leih Nurses
+                    eWorks = getShiftByEmployeeByDateByShift(roster, sdDay, i,f['preceedingShiftType'])
+                    eWorksT = getShiftByEmployeeByDateByShift(roster, sdDayTomorrow, i, f['succeedingShiftType'])
+                    if (eWorks + eWorksT >1): # wenn nurse verbotene schichtreihenfolge arbeitet
+                        return False
+
+        # Für Periodenübergang (letzter Tag vorheriger Periode und erster Tag dieser Periode)
+        sdDay = start_date.strftime("%Y-%m-%d")
+        for i in roster.employees:
+            if(i.lName != "Nurse"):
+                eWorks = getShiftByEmployeeByDateByShift(roster,sdDay,i,f['succeedingShiftType'])
+                eWorksY = 0
+                if(i.history["lastAssignedShiftType"]== f['preceedingShiftType']):
+                    eWorksY = 1
+                if(eWorks +eWorksY > 1):
+                    return False
+
+    return True
+
+def maxSundays(roster):
+    """
+    Überprüft, ob die definierte maximale Anzahl Sonntage, welche pro Mitarbeiter in einer Periode gearbeitet werden, eingehalten wird.
+    :param roster:
+    :return: True - if Constraint 13 is fulfilled
+             False - if Constraint 13 is not fulfilled
+    """
+
+    currentTime = datetime.strptime(roster.start, '%Y-%m-%d')
+    start_date = date(currentTime.year, currentTime.month, currentTime.day)
+    end_period = currentTime + timedelta(days=roster.cntDays-1)
+    end_date = date(end_period.year, end_period.month, end_period.day)
+
+    periodSun = []
+    # erstelle liste mit tagen der sonntage aus periode
+    for single_date in daterange(start_date, end_date+timedelta(days=1)): # für alle Tage der Periode
+        if(single_date.weekday() == 6): # 6 = Sunday
+            periodSun.append(single_date.strftime("%Y-%m-%d"))
+
+    # überprüfe für jeden tag, ob mitarbeiter an sonntag arbeitet, falls ja, erhöhe workSun
+    if(len(periodSun)>0):
+        for i in roster.employees:
+            if(i.lName != "Nurse"):
+                workSun = 0
+                for j in periodSun:
+                    eWorks = getShiftByEmployeeByDate01(roster, j, i)
+                    if(eWorks == 1):
+                        workSun += 1
+                if(workSun > roster.maxSun):
+                    return False
+    return True
+
+def weekendDays(roster):
+    """
+    Constraint 14 + 15
+    Muss ggf. aufgeweicht werden zwecks Krankheit
+    :param roster:
+    :return:
+    """
+
+    currentTime = datetime.strptime(roster.start, '%Y-%m-%d')
+    start_date = date(currentTime.year, currentTime.month, currentTime.day)
+    end_period = currentTime + timedelta(days=roster.cntDays-1)
+    end_date = date(end_period.year, end_period.month, end_period.day)
+
+    periodSun = []
+    # erstelle liste mit tagen der sonntage aus periode
+    for single_date in daterange(start_date, end_date+timedelta(days=1)): # für alle Tage der Periode
+        if(single_date.weekday() == 6): # 6 = Sunday
+            periodSun.append(single_date.strftime("%Y-%m-%d"))
+
+
+    if(len(periodSun)>0):
+        for i in roster.employees:
+            if(i.lName != "Nurse"):
+                for j in range(len(periodSun)):
+                    eWorks = getShiftByEmployeeByDate01(roster,periodSun[j], i)
+                    saturday = (datetime.strptime(periodSun[j], "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
+                    eWorksY = getShiftByEmployeeByDate01(roster, saturday, i)
+                    weekendConstraint = i.weekendContraints[j]
+                    if(((eWorksY + eWorks) < 2*eWorks*weekendConstraint)
+                       or ((eWorksY + eWorks) < 2*eWorksY*weekendConstraint)):
+                        return False
+    return True
+
+def extraHours(roster):
+    """
+    Constraint 16 + 17
+    Für jeden Employee dürfen die Extra working hours nicht die upper bound für Extra working hours überschreiten
+    Für jeden Employee dürfen die Extra working hours nicht die lower bound für Extra working hours unterschreiten
+    Constraint 22 + 23
+    Für jeden Employee müssen die maximum hours aller Employees gleich oder größer sein wie die Extra hours des einzelnen Employee
+    Für jeden Employee müssen die minimum hours aller Employees gleich oder kleiner sein wie die Extra hours des einzelnen Employee
+    :param roster:
+    :return:
+    """
+    for i in roster.employees:
+        if (i.lName != "Nurse"):
+            empExtraHours = i.extraHours
+            if(i.eMaxExtra < empExtraHours or i.minExtra > empExtraHours
+               or roster.maxOver< empExtraHours or roster.maxUnder > empExtraHours):
+                return False
+    return True
+
+def fixedAssignments(roster):
+    """
+    Constraint 4
+    Überprüft, ob die Fixed Assignments auch mit den tatsächlichen Arbeitstagen der Mitarbeiter übereinstimmen
+    :param roster:
+    :return:
+    """
+    for i in roster.fixed:
+        employee = int(i['employee'])
+        day = i['day']
+        shift = i['shiftType']
+        eWorks = getShiftByEmployeeByDateByShift(roster,day,getEmployeeById(roster,employee),shift)
+        eShift = i.shifts['day']
+        if(eWorks == 0 and
+               (eShift != 'sickDay' and eShift != 'vacationDay' and eShift != 'offDay')):
+            return False
     return True
