@@ -23,6 +23,7 @@ class Employee(object):
         self.extraHours = 0                         # Anzahl Stunden ueber Re-Scheduling eingeteilt
         self.hoursWorked = 0
         self.vacationHours = 0
+        self.satisfactionScore = 0                  # Zufriedenheitswert
         
     
     
