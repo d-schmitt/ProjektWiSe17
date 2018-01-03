@@ -8,7 +8,7 @@ from random import gauss
 from Test.constraints import *
 from Test.reschedulingHelpers import *
 import copy
-import random
+from random import random
 
 # Rosterklasse als Uebergabeobjekt zwischen Rescheduling und Simulation
 class Roster(object):
@@ -322,8 +322,91 @@ class Roster(object):
     #----------------------------------------------------------------------------------------------------------------
     # Re-Scheduling
     #----------------------------------------------------------------------------------------------------------------
-    # currentTime: datetime, empID: integer, duration: integer (kann bei Bedarf auch als timedelte uebergeben werden)
+
+    def findEligibleNurses(self,IllnessShift, sickEmployeeName):
+        """
+        Erzeugt eine Liste an Nurses, welche die ausgefallenen Schichten im Rahmen der Restriktionen erfüllen können
+        :param roster:
+        :param IllnessShift:
+        :return:
+        """
+
+        nurses = []
+
+        if (len(IllnessShift) > 0):  # Wenn es Schichten gibt, welche ausfallen
+            # für jede Schicht, wofür ein Ersatz gefunden werden muss
+            for i in range(0, len(IllnessShift)):
+                # Ueberprüfe für jede Nurse
+                for j in self.employees:
+
+                    employeeName = getEmployeeName(j)
+                    employeeWorks = getShiftByEmployeeByDate01(self, IllnessShift[i][0], j)
+                    # Wenn Nurse an dem Tag noch nicht arbeitet:
+                    if (employeeWorks == 0 and employeeName != "Leih Nurse" and employeeName != sickEmployeeName):
+
+                        # Erzeuge Kopie des bisherigen Rosters
+                        # Rostercopy = self
+                        selfcopy = copy.deepcopy(self)
+
+                        # setze Nurse in ausgefallene Schicht der Rosterkopie ein
+                        changeEmployeeShift(selfcopy, IllnessShift[i][0], getEmployeeName(j), IllnessShift[i][1])
+
+                        # Wenn Rosterkopie-Schichtplan gültige Lösung liefert, füge zu Nurseliste hinzu
+                        if (checkShiftAssignments(selfcopy) == True and checkVacationDaysOff(selfcopy) == True
+                            and checkOffDaysOff(selfcopy)):
+                            nurses.append([IllnessShift[i], employeeName])
+        return nurses
+
+    def RandomBasedRescheduling(self, IllnessShift, nurses,log_file):
+        """
+        Zufallsbasierte Lösung
+        :return:
+        """
+        IllnessShiftErsatz = []  # Liste mit Ersatz für kranke Schichten
+        shiftCount = 0
+        # für jede ermittelte krankheitsschicht:
+        for i in IllnessShift:
+            ersatz = 0  # bleibt 0, falls kein Ersatz gefunden wird für Schicht i
+            NoErsatzNurses = getNoErsatzNurses(i, nurses)
+
+            # Wenn nurses für schicht zur verfügung stehen:
+            if (NoErsatzNurses > 0):
+                ErsatzNurses = getErsatzNurseNames(i, nurses)
+                # für jede zum Ersatz stehende Nurse
+                for j in ErsatzNurses:
+                    # Berechne Wahrscheinlichkeit für annehmen
+                    a = random()
+                    log_file.write("Wahrscheinlichkeit " + str(a) + " fuer Annahme der Schicht von " + str(j) + "\n")
+                    if (a > 0.5):
+                        # Assign nurse
+                        changeEmployeeShift(self, IllnessShift[shiftCount][0], j, IllnessShift[shiftCount][1])
+                        IllnessShiftErsatz.append([IllnessShift[shiftCount], j])
+                        ersatz = 1
+                        break
+
+                        # Advanced Lösung: Nehme die Nurse, wo Durchschnitt aus Satisfaction Score + Überstunden minimiert wird (über alle)
+
+            if (NoErsatzNurses == 0 or ersatz == 0):
+                # Einfache Lösung: Zeitarbeitsnurse anstellen
+                changeEmployeeShift(self, IllnessShift[shiftCount][0], 'Leih Nurse', IllnessShift[shiftCount][1])
+                IllnessShiftErsatz.append([IllnessShift[shiftCount], 'Leih Nurse'])
+                log_file.write('Leih Nurse eingetragen fuer' + str(IllnessShift[shiftCount][0]) + "\n")
+                # Was wenn zwei Mitarbeiter in selber Schicht krank sind? --> zwei Leih Nurses
+
+                # Advanced Lösung: Restriktion ggf. aufweichen (WE z.B.)
+            shiftCount += 1
+
+        return IllnessShiftErsatz
+
     def reSchedule(self, currentTime, empID, duration, log_file):
+        """
+        Rescheduled das gegebene Roster
+        :param currentTime: datetime
+        :param empID: integer
+        :param duration: integer
+        :param log_file:
+        :return:
+        """
 
         log_file.write("------------------------------Re-Scheduling----------------------------------\n")
 
@@ -388,91 +471,23 @@ class Roster(object):
             log_file.write("Keine Schichten sind von Mitarbeiterausfall betroffen. \n")
         else:
             log_file.write(str(IllnessShift) + "\n")
-        # (Wiederhole für jede ausgefallene Schicht:)
+            # Finde Nurses, welche Schichten im Rahmen der Restriktionen erfüllen können
+            nurses = self.findEligibleNurses(IllnessShift, sickEmployeeName)
 
-        # Erzeuge eine Liste an Nurses, welche die ausgefallene Schicht ersetzen kann
-        nurses = []
+            log_file.write(str(nurses) + "\n")
 
-        if (len(IllnessShift) > 0):  # Wenn es Schichten gibt, welche ausfallen
-            # für jede Schicht, wofür ein Ersatz gefunden werden muss
-            for i in range(0, len(IllnessShift)):
-                log_file.write(IllnessShift[i][0] + "\n")
-                # Ueberprüfe für jede Nurse
-                for j in self.employees:
-
-                    employeeName = getEmployeeName(j)
-                    employeeWorks = getShiftByEmployeeByDate01(self, IllnessShift[i][0], j)
-                    # Wenn Nurse an dem Tag noch nicht arbeitet:
-                    if (employeeWorks == 0 and employeeName != "Leih Nurse"
-                        and employeeName != sickEmployeeName):
-
-                        # Erzeuge Kopie des bisherigen Rosters
-                        # Rostercopy = self
-                        selfcopy = copy.deepcopy(self)
-
-                        # setze Nurse in ausgefallene Schicht der Rosterkopie ein
-                        changeEmployeeShift(selfcopy, IllnessShift[i][0], getEmployeeName(j), IllnessShift[i][1])
-
-                        # Wenn Rosterkopie-Schichtplan gültige Lösung liefert, füge zu Nurseliste hinzu
-                        if (checkShiftAssignments(selfcopy) == True and checkVacationDaysOff(selfcopy) == True
-                            and checkOffDaysOff(selfcopy)):
-                            nurses.append([IllnessShift[i], employeeName])
-
-        log_file.write(str(nurses) + "\n")
-
-        IllnessShiftErsatz = []  # Liste mit Ersatz für kranke Schichten
-        shiftCount = 0
-        # für jede ermittelte krankheitsschicht:
-        for i in IllnessShift:
-            ersatz = 0  # bleibt 0, falls kein Ersatz gefunden wird für Schicht i
-            NoErsatzNurses = getNoErsatzNurses(i, nurses)
-
-            # Wenn nurses für schicht zur verfügung stehen:
-            if (NoErsatzNurses > 0):
-                ErsatzNurses = getErsatzNurseNames(i, nurses)
-                # für jede zum Ersatz stehende Nurse
-                for j in ErsatzNurses:
-                    # Berechne Wahrscheinlichkeit für annehmen
-                    a = random.random()
-                    log_file.write("Wahrscheinlichkeit " + str(a) + " fuer Annahme der Schicht von " +  str(j) + "\n")
-                    if (a > 0.5):
-                        # Assign nurse
-                        changeEmployeeShift(self, IllnessShift[shiftCount][0], j, IllnessShift[shiftCount][1])
-                        IllnessShiftErsatz.append([IllnessShift[shiftCount], j])
-                        ersatz = 1
-                        break
-
-                        # Advanced Lösung: Nehme die Nurse, wo Durchschnitt aus Satisfaction Score + Überstunden minimiert wird (über alle)
-
-            if (NoErsatzNurses == 0 or ersatz == 0):
-                # Einfache Lösung: Zeitarbeitsnurse anstellen
-                changeEmployeeShift(self, IllnessShift[shiftCount][0], 'Leih Nurse', IllnessShift[shiftCount][1])
-                IllnessShiftErsatz.append([IllnessShift[shiftCount], 'Leih Nurse'])
-                log_file.write('Leih Nurse eingetragen fuer' + str(IllnessShift[shiftCount][0]) + "\n")
-                # Was wenn zwei Mitarbeiter in selber Schicht krank sind? --> zwei Leih Nurses
-
-                # Advanced Lösung: Restriktion ggf. aufweichen (WE z.B.)
-            shiftCount += 1
+            # Zufallsbasierte Lösungsfindung auf Basis der gefundenen Nurses und Schichten
+            IllnessShiftErsatz = self.RandomBasedRescheduling(IllnessShift, nurses, log_file)
         
-        #--------------------------------------------------------------------------------------------------------------
-        # Das habe ich hier eingefuegt, um fuer die re-scheduleten MAs die zusaetzlich gearbeiteten Stunden zu erfassen    
-        for i in IllnessShiftErsatz:
-            e = self.getEmployeeByName(i[1])
-            sType = self.getShiftDefByName(i[0][1])
-            addHours = sType["workingHours"]
-            e.extraHours = e.extraHours + addHours
-        #--------------------------------------------------------------------------------------------------------------
-        
-        log_file.write("Gefundener Ersatz: "  + str(IllnessShiftErsatz) + "\n")
+            #--------------------------------------------------------------------------------------------------------------
+            # Das habe ich hier eingefuegt, um fuer die re-scheduleten MAs die zusaetzlich gearbeiteten Stunden zu erfassen
+            for i in IllnessShiftErsatz:
+                e = self.getEmployeeByName(i[1])
+                sType = self.getShiftDefByName(i[0][1])
+                addHours = sType["workingHours"]
+                e.extraHours = e.extraHours + addHours
+            #--------------------------------------------------------------------------------------------------------------
+
+            log_file.write("Gefundener Ersatz: "  + str(IllnessShiftErsatz) + "\n")
         #print(checkMinMaxConsec(self))
         log_file.write("---------------------------Ende Re-Scheduling--------------------------------\n")
-            
-            
-        
-                    
-            
-            
-            
-            
-           
-        

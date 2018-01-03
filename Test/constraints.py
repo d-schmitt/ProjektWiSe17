@@ -1,7 +1,6 @@
 from Test.reschedulingHelpers import *
 from datetime import datetime, timedelta, date
 
-
 def checkShiftAssignments(roster):
     """
     Each employee is not allowed to work more than one shift per day.
@@ -367,7 +366,7 @@ def minConsec(roster):
     end_period = currentTime + timedelta(days=roster.cntDays - 1)
     end_date = date(end_period.year, end_period.month, end_period.day)
 
-    dayCount = 1  # TODO: startet Day bei 0 oder bei 1?
+    dayCount = 1
     for single_date in daterange(start_date, end_date + timedelta(days=1)):  # für alle Tage der Periode
         for i in roster.employees:  # für alle Mitarbeiter
 
@@ -465,12 +464,11 @@ def minConsecPeriod(roster):
     start_date = date(currentTime.year, currentTime.month, currentTime.day)
 
     for i in roster.employees:  # für alle Mitarbeiter
-        dayCount = 1
         if (i.minConsecutive > i.history['numberOfConsecutiveWorkingDays']):
-
             # linke Summe
             daySum = min(i.minConsecutive - i.history['numberOfConsecutiveWorkingDays'], roster.cntDays)
             consecDays = 0
+            dayCount = 1
             for j in range(dayCount, daySum + 1):
                 d = start_date + timedelta(days=j - 1)
                 d = d.strftime("%Y-%m-%d")
@@ -497,10 +495,9 @@ def maxConsecPeriod(roster):
     start_date = date(currentTime.year, currentTime.month, currentTime.day)
 
     for i in roster.employees:  # für alle Mitarbeiter
-        dayCount = 1
         if (i.maxConsecutive - i.history['numberOfConsecutiveWorkingDays'] < roster.cntDays):
-
             # linke Summe
+            dayCount = 1
             daySum = dayCount + i.maxConsecutive - i.history['numberOfConsecutiveWorkingDays']
             consecDays = 0
             for j in range(dayCount, daySum + 1):
@@ -515,4 +512,18 @@ def maxConsecPeriod(roster):
 
             if (consecDays < eWorksY):
                 return False
+    return True
+
+def MinMaxSatisfactionScore(roster):
+    """
+    Constraint 24+25
+    :param roster:
+    :return:
+    """
+    satmin, satmax = MinMaxSatisfaction(roster)
+
+    for i in roster.employees:
+        if(i.satisfactionScore > satmax or i.satisfactionScore < satmin):
+            return False
+
     return True

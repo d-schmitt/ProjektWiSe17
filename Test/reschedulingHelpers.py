@@ -1,4 +1,5 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
+from Test.constraints import *
 
 # Gibt zurueck, ob MA Schicht X am Tag Y arbeitet (0-1)
 def getShiftByEmployeeByDateByShift(r, date, employee, shift):
@@ -92,3 +93,54 @@ def getConsecStartDay(today,r, employee):
                (employee.history["lastAssignedShiftType"] != "Spaet" and employee.history["lastAssignedShiftType"]!="Frueh")):
             return(1)
         return(0)
+
+
+def MinMaxSatisfaction(roster):
+    """
+    Calculates min und max Satisfaction Score of roster
+    :param roster:
+    :return: satmin, satmax
+    """
+    satmax = 0
+    satmin = 0
+    for i in roster.employees:
+        if (i.satisfactionScore >= satmax):
+            satmax = i.satisfactionScore
+
+        if (i.satisfactionScore <= satmin):
+            satmin = i.satisfactionScore
+
+    return satmin, satmax
+
+def cumSatScore(roster):
+    """
+    Returns cumulative Satisfaction Score
+    :param roster:
+    :return:
+    """
+    cumulativeSatScore = 0
+    for i in roster.employees:
+        cumulativeSatScore += i.satisfactionScore
+        #cumulativeSatScore += abs(i.satisfactionScore) # absolute value
+
+    return cumulativeSatScore
+
+def getMondays(roster):
+    """
+    returns a list with all mondays within the period
+    :param roster:
+    :return:
+    """
+    weeks = []
+    currentTime = datetime.strptime(roster.start, '%Y-%m-%d')
+    start_date = date(currentTime.year, currentTime.month, currentTime.day)
+    end_period = currentTime + timedelta(days=roster.cntDays - 1)
+    end_date = date(end_period.year, end_period.month, end_period.day)
+
+    for single_date in daterange(start_date, end_date +timedelta(days=1)):
+        d = single_date.strftime("%Y-%m-%d")
+        if(single_date.weekday()==0): # Monday
+            weeks.append(d)
+    return weeks
+
+
