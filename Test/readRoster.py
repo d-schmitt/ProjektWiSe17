@@ -1,6 +1,8 @@
 import json
 from employee import Employee       # eigene Employeeklasse
+from datetime import datetime
 import copy
+from _datetime import timedelta
 
 constraintsFile = 'roster-simulation_01_1705.json'
 rosterFile = 'roster-simulation_01_170506_00-10.json'
@@ -112,6 +114,7 @@ def getRosterData():
 
 # Funktion zum Lesen der Daten ueber Mitarbeiter
 def getEmployees():
+    
     # Constraints-Datei oeffnen
     with open(constraintsFile) as constraints:
         # in dictionary schreiben
@@ -119,6 +122,21 @@ def getEmployees():
         
     with open(rosterFile) as empRoster:
         rosterData = json.load(empRoster)
+    
+    # Woechtentliches ARbeitszeitenArray initialisieren    
+    overUnderTime = []
+    fDay = data["firstDay"]
+    dayTime = datetime.strptime(fDay, '%Y-%m-%d')
+    mDay = 1
+    cntWeeks = 1
+    while mDay <= int(data["numberOfDays"]):
+        if dayTime.weekday() == 0 and mDay != 1:
+            cntWeeks += 1
+        dayTime += timedelta(days=1)    
+        mDay += 1
+    for i in range(0, cntWeeks):
+        overUnderTime.append(0)  
+    
         
     employees = data["employees"]       # Array aus Dicionarys in employees speichern
     
@@ -140,7 +158,7 @@ def getEmployees():
         eShifts = rosterData[eFName + " " + eLName]     # Schichtplan des MAs
         
         # Employee Objekt erstellen
-        currentEmployee = Employee(eID, eFName, eLName, eHours, eMinConsecutive, eMaxConsecutive, eMinExtra, eMaxExtra, eOff, eVacation, eHistory, eWeekendConstraints, eShifts)
+        currentEmployee = Employee(eID, eFName, eLName, eHours, eMinConsecutive, eMaxConsecutive, eMinExtra, eMaxExtra, eOff, eVacation, eHistory, eWeekendConstraints, eShifts, overUnderTime)
         
         employeeList.append(currentEmployee)    # Mitarbeiter der Liste hinzufuegen
         
@@ -149,7 +167,7 @@ def getEmployees():
     for key in leihShifts.keys():       # Leeren Schichtplan erstellen
         leihShifts[key] = "None"
     
-    leihNurse = Employee(0, "Leih", "Nurse", 99, 0, 99, 0, 999, [], [], {}, [], leihShifts)
+    leihNurse = Employee(0, "Leih", "Nurse", 99, 0, 99, 0, 999, [], [], {}, [], leihShifts, overUnderTime)
     employeeList.append(leihNurse)    # Mitarbeiter der Liste hinzufuegen
         
     return(employeeList)

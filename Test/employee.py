@@ -2,7 +2,7 @@
 class Employee(object):
     
     # Konstruktor
-    def __init__(self, eID, eFName, eLName, eHours, eMinConsecutive, eMaxConsecutive, eMinExtra, eMaxExtra, eOff, eVacation, eHistory, eWeekendConstraints, eShifts):
+    def __init__(self, eID, eFName, eLName, eHours, eMinConsecutive, eMaxConsecutive, eMinExtra, eMaxExtra, eOff, eVacation, eHistory, eWeekendConstraints, eShifts, eOverUnderTime):
         self.eID = eID
         self.fName = eFName
         self.lName = eLName
@@ -24,6 +24,7 @@ class Employee(object):
         self.hoursWorked = 0
         self.vacationHours = 0
         self.satisfactionScore = 0                  # Zufriedenheitswert
+        self.overUnderTime = eOverUnderTime         # woechentliche Ueber-/ Unterstunden
         
     
     
