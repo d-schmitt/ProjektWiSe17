@@ -143,4 +143,80 @@ def getMondays(roster):
             weeks.append(d)
     return weeks
 
+#TODO: Änderungen 04.01.2018
+def getWeekNo(r,date):
+    """
+    Returns the Week No. of a given date
+    :param r: roster
+    :param date: current day
+    :return: no. of weeks the current day lies in a month
+    """
+    fDay = r.start
+    dayTime = datetime.strptime(fDay, '%Y-%m-%d')
 
+    mDay = 1
+    cntWeeks = 1
+    while mDay <= int(date.day):
+        if dayTime.weekday() == 0 and mDay != 1:
+            cntWeeks += 1
+        dayTime += timedelta(days=1)
+        mDay += 1
+
+    return cntWeeks
+
+def getDayDifference(start_date,current_date):
+    """
+    calculates the difference in days between two dates
+    :return:
+    """
+    newDay = int(current_date[8:])
+    startDay = int(start_date.day)
+
+    difference = newDay - startDay
+    return difference
+
+def getSatisfactionScoreChanges(r, start_date, currentDay, currentShift, empName):
+    """
+    Änderung des Satisfaction Score berechnen: (-5 / Anzahl Tage vorher Bescheid Abzug für Satisfaction Score+1)
+    :return:
+    """
+
+    # Berechnung Unzufriedenheit wegen kurzfristigem Einsatz
+    dayDifference = getDayDifference(start_date, currentDay)
+    maxSatisfactionScoreReduction = 5
+    satisfactionScoreChange = -(maxSatisfactionScoreReduction / (dayDifference + 1))  # +1 to avoid dayDifference being 0
+
+    # Überprüfung: Hat Mitarbeiter so Wunschtag/Hasstag erhalten?
+    employeeID = getEmployeeByName(r, empName).eID
+    for request in r.requests:
+        if (request['employeeID'] == employeeID and request['shiftType'] == currentShift
+            and request['day'] == currentDay):
+            satisfactionScoreChange += request['preference']
+
+    return satisfactionScoreChange
+
+def getObjectiveFunction(r):
+    maxSatisfactionScore = 0
+    minSatisfactionScore = 0
+
+    maxOvertime = 0
+    minOvertime = 0
+    for e in r.employees:
+        # Zufriedenheit
+        empSatisfactionScore = e.satisfactionScore
+        if (empSatisfactionScore > maxSatisfactionScore):
+            maxSatisfactionScore = empSatisfactionScore
+        if (empSatisfactionScore < minSatisfactionScore):
+            minSatisfactionScore = empSatisfactionScore
+
+        # Überstunden
+        empOvertime = e.extraHours
+        if (empOvertime > maxOvertime):
+            maxOvertime = empOvertime
+        if (empOvertime < minOvertime):
+            minOvertime = empOvertime
+
+    alpha = 0.5
+    beta = 0.5
+    objectiveFunction = alpha*(maxSatisfactionScore-minSatisfactionScore) + beta*(maxOvertime-minOvertime)
+    return objectiveFunction

@@ -382,9 +382,10 @@ class Roster(object):
                         changeEmployeeShift(self, IllnessShift[shiftCount][0], j, IllnessShift[shiftCount][1])
                         IllnessShiftErsatz.append([IllnessShift[shiftCount], j])
                         ersatz = 1
-                        break
 
                         # Advanced Lösung: Nehme die Nurse, wo Durchschnitt aus Satisfaction Score + Überstunden minimiert wird (über alle)
+
+                        break
 
             if (NoErsatzNurses == 0 or ersatz == 0):
                 # Einfache Lösung: Zeitarbeitsnurse anstellen
@@ -397,6 +398,63 @@ class Roster(object):
             shiftCount += 1
 
         return IllnessShiftErsatz
+
+    # TODO: Änderungen vom 04.01.2018
+    def RatioBasedRescheduling(self, IllnessShift, nurses, log_file, start_date):
+        """
+        Kennzahlenbasierte Lösung
+        Nehme die Nurse, wo Durchschnitt aus Satisfaction Score + Überstunden minimiert wird (über alle)
+        :return:
+        """
+        IllnessShiftErsatz = []  # Liste mit Ersatz für kranke Schichten
+        shiftCount = 0
+        # für jede ermittelte krankheitsschicht:
+        for i in IllnessShift:
+            ersatz = 0  # bleibt 0, falls kein Ersatz gefunden wird für Schicht i
+            NoErsatzNurses = getNoErsatzNurses(i, nurses)
+
+            # Wenn nurses für schicht zur verfügung stehen:
+            if (NoErsatzNurses > 0):
+                ErsatzNurses = getErsatzNurseNames(i, nurses)
+                # für jede zum Ersatz stehende Nurse
+                for j in ErsatzNurses:
+                    currentDay = IllnessShift[shiftCount][0]
+                    currentShift = IllnessShift[shiftCount][1]
+                    # neues Roster erzeugen
+                    selfcopy = copy.deepcopy(self)
+
+                    # Assign nurse dem Testroster
+                    changeEmployeeShift(selfcopy, currentDay, j,currentShift)
+
+                    # Änderung des Satisfaction Score berechnen: (-5 / Anzahl Tage vorher Bescheid Abzug für Satisfaction Score+1)
+                    satisfactionScoreChange = getSatisfactionScoreChanges(selfcopy, start_date, currentDay, currentShift, j)
+                    getEmployeeByName(selfcopy, j).satisfactionScore += satisfactionScoreChange
+
+                    # Max Überstunden und Zufriedenheit des neuen Rosters herausfinden
+                    rosterValue = getObjectiveFunction(selfcopy)
+
+                    # Vergleich von allen Nurses
+
+                    print(1)
+                    break
+
+                # wenn dann nurse zugewiesen wurde:
+                changeEmployeeShift(selfcopy, currentDay, j, currentShift)
+                IllnessShiftErsatz.append([IllnessShift[shiftCount], j])
+                ersatz = 1
+
+            if (NoErsatzNurses == 0 or ersatz == 0):
+                # Einfache Lösung: Zeitarbeitsnurse anstellen
+                changeEmployeeShift(self, IllnessShift[shiftCount][0], 'Leih Nurse', IllnessShift[shiftCount][1])
+                IllnessShiftErsatz.append([IllnessShift[shiftCount], 'Leih Nurse'])
+                log_file.write('Leih Nurse eingetragen fuer' + str(IllnessShift[shiftCount][0]) + "\n")
+                # Was wenn zwei Mitarbeiter in selber Schicht krank sind? --> zwei Leih Nurses
+
+                # Advanced Lösung: Restriktion ggf. aufweichen (WE z.B.)
+            shiftCount += 1
+
+        return IllnessShiftErsatz
+    # TODO: Ende
 
     def reSchedule(self, currentTime, empID, duration, log_file):
         """
@@ -466,6 +524,14 @@ class Roster(object):
                     # Mitarbeiter Krank melden
                     changeEmployeeShift(self, sdDay, sickEmployeeName, 'sickDay')
 
+                    #TODO: Übertrage diese Änderungen vom 04.01.2018
+                    # Update OverTime
+                    # Herausfinden, zu welcher Woche der Krankheitstag gehört
+                    weekCount = getWeekNo(self,single_date)
+                    sickEmployee.overUnderTime[weekCount -1]-=8
+                    #sickEmployee.satisfactionScore +=8 # Nur Zufriedenheit Ersatz ändert sich
+                    #TODO: ENDE
+
 
         if(len(IllnessShift)==0):
             log_file.write("Keine Schichten sind von Mitarbeiterausfall betroffen. \n")
@@ -476,9 +542,12 @@ class Roster(object):
 
             log_file.write(str(nurses) + "\n")
 
+            #TODO: Änderungen vom 04.01.2018
             # Zufallsbasierte Lösungsfindung auf Basis der gefundenen Nurses und Schichten
-            IllnessShiftErsatz = self.RandomBasedRescheduling(IllnessShift, nurses, log_file)
-        
+            #IllnessShiftErsatz = self.RandomBasedRescheduling(IllnessShift, nurses, log_file)
+            IllnessShiftErsatz = self.RatioBasedRescheduling(IllnessShift, nurses, log_file, start_date)
+            # TODO: Ende
+
             #--------------------------------------------------------------------------------------------------------------
             # Das habe ich hier eingefuegt, um fuer die re-scheduleten MAs die zusaetzlich gearbeiteten Stunden zu erfassen
             for i in IllnessShiftErsatz:
