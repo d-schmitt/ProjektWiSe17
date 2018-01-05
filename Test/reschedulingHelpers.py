@@ -143,7 +143,6 @@ def getMondays(roster):
             weeks.append(d)
     return weeks
 
-#TODO: Änderungen 04.01.2018
 def getWeekNo(r,date):
     """
     Returns the Week No. of a given date
@@ -196,6 +195,11 @@ def getSatisfactionScoreChanges(r, start_date, currentDay, currentShift, empName
     return satisfactionScoreChange
 
 def getObjectiveFunction(r):
+    """
+    Berechnet den Zielfunktionswert aus Überstunden und Zufriedenheit der Mitarbeiter für ein gegebenes Roster
+    :param r: roster
+    :return: Zielfunktionswert
+    """
     maxSatisfactionScore = 0
     minSatisfactionScore = 0
 
