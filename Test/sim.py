@@ -3,9 +3,56 @@ from datetime import datetime, timedelta
 from Test.event import Event
 from Test.event import shiftBegin, shiftEnd, vacationBegin, vacationEnd,\
     illnessBegin, illnessEnd
+    
+# Zufriedenheit der Mitarbeiter vorab berechnen    
+def calculateSatisfaction(r):
+    for ro in r.requests:
+        cEmp = r.getEmployeeById(ro["employeeID"])
+        if cEmp.shifts[ro["day"]] == "None" or cEmp.shifts[ro["day"]] == "vacationDay" or cEmp.shifts[ro["day"]] == "offDay":
+            x = 1
+        else:
+            if ro["shiftType"] == cEmp.shifts[ro["day"]]:
+                cEmp.satisfactionScore += ro["preference"]
+    return r
+
+
+# Ueber- Unterstunden vorab berechnen
+def calculateWeeklyOverUnderTime(r):
+    dayTime = datetime.strptime(r.start, '%Y-%m-%d')        # Zeitrechner initialisieren
+    mDay = 1
+    currentWeek = 0
+    while(mDay <= r.cntDays):
+        if dayTime.weekday() == 0 and mDay != 1:
+            currentWeek += 1
+        stringDate = dayTime.strftime('%Y-%m-%d')
+        for e in r.employees:
+            if e.shifts[stringDate] == "offDay" or e.shifts[stringDate] == "None":
+                e.overUnderTime[currentWeek] = e.overUnderTime[currentWeek]
+            if e.shifts[stringDate] == "vacationDay":
+                e.overUnderTime[currentWeek] += e.hours/5
+            else:
+                shiftDef = r.getShiftDefByName(e.shifts[stringDate])
+                if shiftDef != 0:
+                    e.overUnderTime[currentWeek] += shiftDef["workingHours"]   
+        dayTime += timedelta(days=1)
+        mDay += 1
+    
+    for e in r.employees:
+        i = 0
+        while i < len(r.workDaysPerWeek):
+            e.overUnderTime[i] = e.overUnderTime[i] - (r.workDaysPerWeek[i] * (e.hours/5))
+            i += 1    
+    return r
+
 
 # Zeitlicher Ablauf der Simulation
 def simulate(r, log_file):
+    
+    # Zufriedenheit der Mitarbeiter vorab berechnen 
+    r = calculateSatisfaction(r)
+    
+    # Ueber- Unterstunden vorab berechnen
+    r = calculateWeeklyOverUnderTime(r)
     
     # urspruenglich geplante Arbeitsstunden berechnen (wird am Ende zum Abgleich mit tatsaechlich gearbeitetetn Stunden benoetigt)
     plannedHours = {}
@@ -178,7 +225,6 @@ def simulate(r, log_file):
         j = 0
         while j < r.cntDays:
             if currentDay.weekday() != 5 and currentDay.weekday() != 6 and empl.eID != 0:
-                print(str(currentDay) + ": " + empl.fName + " + " + str(empl.hours/5))
                 demandedHours[empl.eID] += empl.hours/5
             currentDay += timedelta(days=1)
             j += 1

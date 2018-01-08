@@ -106,9 +106,33 @@ def getRosterData():
     shiftReq = data["shiftRequestJSONs"]                    # Schicht Anfragen von Mitarbeitern
     fixedShifts = data["fixedAssignmentJSONs"]              # Fest zugewiesene Schichten
     shiftTypes = data["shiftTypes"]                         # Schichtearten als Liste
+    
+    # Woechtentliches ARbeitstageArray initialisieren    
+    workDays = []
+    fDay = data["firstDay"]
+    dayTime = datetime.strptime(fDay, '%Y-%m-%d')
+    mDay = 1
+    cntWeeks = 1
+    while mDay <= int(data["numberOfDays"]):
+        if dayTime.weekday() == 0 and mDay != 1:
+            cntWeeks += 1
+        dayTime += timedelta(days=1)    
+        mDay += 1
+    for i in range(0, cntWeeks):
+        workDays.append(0)
+    dayTime = datetime.strptime(fDay, '%Y-%m-%d')        # Zeitrechner initialisieren
+    mDay = 1
+    currentWeek = 0
+    while mDay <= int(data["numberOfDays"]):
+        if dayTime.weekday() == 0 and mDay != 1:
+            currentWeek += 1
+        if dayTime.weekday() == 0 or dayTime.weekday() == 1 or dayTime.weekday() == 2 or dayTime.weekday() == 3 or dayTime.weekday() == 4:
+            workDays[currentWeek] += 1   
+        dayTime += timedelta(days=1)
+        mDay += 1
 
     # Rueckgabe der Informationen als Array zur einfaches Weiterverarbeitung
-    return([planID, cntDays, cntWeeks, firstDay, maxSundays, maxOvertime, maxUndertime, forbiddenShifts, standardContr, shiftReq, fixedShifts, shiftTypes])
+    return([planID, cntDays, cntWeeks, firstDay, maxSundays, maxOvertime, maxUndertime, forbiddenShifts, standardContr, shiftReq, fixedShifts, shiftTypes, workDays])
     
 
 
@@ -158,7 +182,8 @@ def getEmployees():
         eShifts = rosterData[eFName + " " + eLName]     # Schichtplan des MAs
         
         # Employee Objekt erstellen
-        currentEmployee = Employee(eID, eFName, eLName, eHours, eMinConsecutive, eMaxConsecutive, eMinExtra, eMaxExtra, eOff, eVacation, eHistory, eWeekendConstraints, eShifts, overUnderTime)
+        ouTime = copy.deepcopy(overUnderTime)
+        currentEmployee = Employee(eID, eFName, eLName, eHours, eMinConsecutive, eMaxConsecutive, eMinExtra, eMaxExtra, eOff, eVacation, eHistory, eWeekendConstraints, eShifts, ouTime)
         
         employeeList.append(currentEmployee)    # Mitarbeiter der Liste hinzufuegen
         
@@ -167,7 +192,8 @@ def getEmployees():
     for key in leihShifts.keys():       # Leeren Schichtplan erstellen
         leihShifts[key] = "None"
     
-    leihNurse = Employee(0, "Leih", "Nurse", 99, 0, 99, 0, 999, [], [], {}, [], leihShifts, overUnderTime)
+    lOUTime = copy.deepcopy(overUnderTime)
+    leihNurse = Employee(0, "Leih", "Nurse", 99, 0, 99, 0, 999, [], [], {}, [], leihShifts, lOUTime)
     employeeList.append(leihNurse)    # Mitarbeiter der Liste hinzufuegen
         
     return(employeeList)

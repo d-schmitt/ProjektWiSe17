@@ -1,5 +1,5 @@
-from roster import Roster
-from readRoster import *
+from Test.roster import Roster
+from Test.readRoster import *
 from time import *
 from datetime import datetime, timedelta
 
@@ -12,7 +12,8 @@ empList = getEmployees()                            # MA-Daten einlesen
 R1 = Roster(newRoster, basicInfos, empList)         # Datenstruktur Roster mit Daten erzeugen
 
 for e in R1.employees:
-    print(e.fName + ": " + str(e.overUnderTime))
+    print(str(e))
+
 
 #print(R1.getSickShifts(52, datetime(2017, 5, 3, 8, 0), datetime(2017, 5, 7, 23, 30)))
 #print(R1.addSickHours(49, datetime(2017, 5, 4, 11, 0), datetime(2017, 5, 9, 11, 0)))
