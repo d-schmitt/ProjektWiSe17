@@ -20,6 +20,7 @@ R1 = Roster(newRoster, basicInfos, empList)         # Datenstruktur Roster mit D
 
 simulate(R1, log_file)                                        # Aufruf der Simulationsfunktion
 
+
 tEnd = clock()                                      # Zeitvariable zur Laufzeitmessung
 
 log_file.write("####################################################################################\n")

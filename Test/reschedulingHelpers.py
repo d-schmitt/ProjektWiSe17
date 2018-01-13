@@ -25,6 +25,16 @@ def getShiftByEmployeeByDate01(r, date, employee):
             return(0)
     print("Mitarbeiter nicht gefunden")
 
+# Gibt zurueck, ob ein MA an einem tag arbeitet (auch Nurses)
+def getShiftByEmployeeByDateN(r, date, employee):
+    for e in r.employees:
+        if e.eID == employee.eID:
+            if (e.shifts[str(date)[:10]] == "Frueh" or e.shifts[str(date)[:10]] == "Spaet"):
+                return (1)
+            else:
+                return (0)
+    print("Mitarbeiter nicht gefunden")
+
 # Funktion gibt den Mitarbeiter mit einer bestimmten ID zurueck
 def getEmployeeById(r, empID):
     for e in r.employees:
@@ -55,22 +65,6 @@ def changeEmployeeShift(r,date,e, status):
             employee.shifts[key] = status
             return(r)
     print("Der angegebene Tag existiert nicht im Mitarbeiterschichtverzeichnis.")
-
-def getNoErsatzNurses(a,nurses):
-    # gibt die Anzahl der Nurses für eine bestimmte Schicht und Tag zurück, welche als Ersatz zur Verfügung stehen
-    count = 0
-    for i in range(len(nurses)):
-        if(nurses[i][0][0] == a[0] and nurses[i][0][1] == a[1]):
-            count = count+1
-    return count
-
-def getErsatzNurseNames(a, nurses):
-    # gibt eine Liste der ErsatzNurse Namen zurück aus Nurse für eine Schicht a
-    count = []
-    for i in range(len(nurses)):
-        if(nurses[i][0][0] == a[0] and nurses[i][0][1] == a[1]):
-            count.append(nurses[i][1])
-    return count
 
 def daterange(start_date, end_date):
     # iterates over all days between given start and end date
@@ -224,3 +218,25 @@ def getObjectiveFunction(r):
     beta = 0.5
     objectiveFunction = alpha*(maxSatisfactionScore-minSatisfactionScore) + beta*(maxOvertime-minOvertime)
     return objectiveFunction
+
+def SickNoteEmployee(r, day, sickEmployeeName):
+    # Meldet Mitarbeiter Krank für den Tag
+    # und passt die Überstunden an
+    changeEmployeeShift(r,day,sickEmployeeName, 'sickDay')
+    # Update OverTime
+    iday = datetime.strptime(day, "%Y-%m-%d")
+    weekCount = getWeekNo(r, iday)
+    getEmployeeByName(r,sickEmployeeName).overUnderTime[weekCount - 1] -= 8
+
+def SickNoteEmployeeAllShifts(r, SickShifts, sickEmployeeName):
+
+    for day, shift in SickShifts.items():
+
+        # Meldet Mitarbeiter Krank für den Tag
+        # und passt die Überstunden an
+        changeEmployeeShift(r, day, sickEmployeeName, 'sickDay')
+        # Update OverTime
+        iday = datetime.strptime(day, "%Y-%m-%d")
+        weekCount = getWeekNo(r, iday)
+        getEmployeeByName(r, sickEmployeeName).overUnderTime[weekCount - 1] -= 8
+

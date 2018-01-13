@@ -41,6 +41,7 @@ def checkDaysOff_old(roster):
     Each employee should not work on his/her day offs.
     Old Version of the CheckDaysOff Constraint.
     New Version see below.
+    ** Outdated**
 
     :param roster:
     :return: True if no employee works on his/her day offs
@@ -139,7 +140,7 @@ def checkShiftAssignmentToDemand(roster):
         sdDay = single_date.strftime("%Y-%m-%d")
         dayCount = 0
         for i in roster.employees:
-            if (getShiftByEmployeeByDate01(roster, sdDay, i) == 1):
+            if (getShiftByEmployeeByDateN(roster, sdDay, i) == 1):
                 dayCount += 1
         assignments.append(dayCount)
 
@@ -148,27 +149,6 @@ def checkShiftAssignmentToDemand(roster):
         if (demandPerDay[i] != assignments[i]):
             return False
     return True
-
-
-def checkWeeklyWorkingHours(roster):
-    """
-    Für jeden Employee und jede Woche gilt:
-    Die Summe an Wochenstunden über die Tagen und Schichten die ein Employee arbeitet
-    – dessen Überstunden und
-    + die Unterstunden
-    = müssen gleich der regular working hours sein
-    :param roster:
-    :return:
-    """
-    """
-    Für jeden Employee und jede Woche gilt: Die Summe an Wochenstunden über die Tagen und Schichten die ein Employee arbeitet – dessen Überstunden und + die Unterstunden müssen gleich der regular working hours sein
-Für jeden Mitarbeiter i
-Für jede Woche j aus getWeeks
-Für jeden Tag der Woche d
-Für jede Schicht s
-
-Wenn getContract(i).RegularWorkingHours != """
-
 
 def checkMinMaxConsec(roster):
     """
@@ -283,6 +263,73 @@ def maxSundays(roster):
                     return False
     return True
 
+def maxSundaysS(roster):
+    """
+    Überprüft, ob die definierte maximale Anzahl Sonntage, welche pro Mitarbeiter in einer Periode gearbeitet werden, eingehalten wird.
+    Zusätzliche Anpassung, sodass SatisfactionScore zurückgegeben wird
+    :param roster:
+    :return: True - if Constraint 13 is fulfilled
+             False - if Constraint 13 is not fulfilled
+    """
+
+    currentTime = datetime.strptime(roster.start, '%Y-%m-%d')
+    start_date = date(currentTime.year, currentTime.month, currentTime.day)
+    end_period = currentTime + timedelta(days=roster.cntDays - 1)
+    end_date = date(end_period.year, end_period.month, end_period.day)
+
+    periodSun = []
+    # erstelle liste mit tagen der sonntage aus periode
+    for single_date in daterange(start_date, end_date + timedelta(days=1)):  # für alle Tage der Periode
+        if (single_date.weekday() == 6):  # 6 = Sunday
+            periodSun.append(single_date.strftime("%Y-%m-%d"))
+
+    SatisfactionScore = 0
+    # überprüfe für jeden tag, ob mitarbeiter an sonntag arbeitet, falls ja, erhöhe workSun
+    if (len(periodSun) > 0):
+        for i in roster.employees:
+            if (i.lName != "Nurse"):
+                workSun = 0
+                for j in periodSun:
+                    eWorks = getShiftByEmployeeByDate01(roster, j, i)
+                    if (eWorks == 1):
+                        workSun += 1
+                if (workSun > roster.maxSun):
+                    SatisfactionScore -= (workSun -roster.maxSun)
+    return SatisfactionScore
+
+def weekendDaysS(roster):
+    """
+    Constraint 14 + 15
+    Muss ggf. aufgeweicht werden zwecks Krankheit
+    SatisfactionScore
+    :param roster:
+    :return:
+    """
+
+    currentTime = datetime.strptime(roster.start, '%Y-%m-%d')
+    start_date = date(currentTime.year, currentTime.month, currentTime.day)
+    end_period = currentTime + timedelta(days=roster.cntDays - 1)
+    end_date = date(end_period.year, end_period.month, end_period.day)
+
+    periodSun = []
+    satisfactionScore = 0
+    # erstelle liste mit tagen der sonntage aus periode
+    for single_date in daterange(start_date, end_date + timedelta(days=1)):  # für alle Tage der Periode
+        if (single_date.weekday() == 6):  # 6 = Sunday
+            periodSun.append(single_date.strftime("%Y-%m-%d"))
+
+    if (len(periodSun) > 0):
+        for i in roster.employees:
+            if (i.lName != "Nurse"):
+                for j in range(len(periodSun)):
+                    eWorks = getShiftByEmployeeByDate01(roster, periodSun[j], i)
+                    saturday = (datetime.strptime(periodSun[j], "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
+                    eWorksY = getShiftByEmployeeByDate01(roster, saturday, i)
+                    weekendConstraint = i.weekendContraints[j]
+                    if (((eWorksY + eWorks) < 2 * eWorks * weekendConstraint)
+                        or ((eWorksY + eWorks) < 2 * eWorksY * weekendConstraint)):
+                        satisfactionScore -=1
+    return satisfactionScore
 
 def weekendDays(roster):
     """
@@ -527,3 +574,52 @@ def MinMaxSatisfactionScore(roster):
             return False
 
     return True
+
+def checkHardConstraints(r):
+    """
+    Überprüft harte Restriktionen
+    :param r: roster
+    :return:
+    """
+    hardConstraints = [checkShiftAssignments(r),checkVacationDaysOff(r),checkOffDaysOff(r),
+                       checkShiftAssignmentToDemand(r),forbiddenPatterns(r), checkMinMaxConsec(r)]
+    count = 0
+    for i in hardConstraints:
+        if(i == False):
+            #print("Hard",count)
+            return False
+        count +=1
+    return True
+
+def checkAllConstraints(r):
+    """
+    Überprüft alle Restriktionen
+    :param r: roster
+    :return:
+    """
+    hardConstraints = [checkShiftAssignments(r),checkVacationDaysOff(r),checkOffDaysOff(r),
+                       checkShiftAssignmentToDemand(r), forbiddenPatterns(r), checkMinMaxConsec(r),
+                       maxSundays(r)]
+    count = 0
+    for i in hardConstraints:
+        if(i == False):
+            print("All",count)
+            return False
+        count +=1
+    return True
+
+def checkSoftConstraints(r):
+    """
+    Überprüft inwiefern Soft Constraints eingehalten wurden
+    WE,x
+    mehr Sonntage,x
+    minimale und maximale Konsekutive Arbeitstage dürfen auch verletzt werden (fehlt noch)
+
+    :param r:
+    :return:
+    """
+    softConstraints = [maxSundaysS(r), weekendDaysS(r)]
+    rosterScore = 0
+    for i in softConstraints:
+        rosterScore += i
+    return rosterScore
